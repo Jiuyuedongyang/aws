@@ -1,5 +1,6 @@
 // pages/exam/index.js
 
+// 导入we-swiper，具体使用方法参考https://github.com/we-plugin/we-swiper
 import weSwiper from "../../we-swiper/dist/weSwiper";
 
 const option = {
@@ -78,29 +79,34 @@ const option = {
     });
   },
 };
+
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    input_page: 1, //跳转页面
-    outterIndex: 0,
-    innerIndex: 0,
-    flag: 100, //标志位答错为0，答对为1，否则为任意数这里填100
-    currentTab:0,
-    answerAll: [],
-    body: [
-      {
-        id: 1,
-        type: 1,
-        question: "第1题",
-        en_zn: false, //false为英文 zn为中文 中英切换
-        answer: "a",
-        answers: [
-          {
-            index: "a",
-            content: "a1",
-            content_cn: "a1_cn",
+    input_page: 1, //用户跳转页面默认为1
+    outterIndex: 0, //题号索引 外索引
+    innerIndex: 0, //选项索引 内索引
+    flag: 100, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+    currentTab: 0, //当前swiper的页数
+    answerAll: [], //多选题数组
+
+
+    /** 
+    body为题目主体 
+    */
+    body: [{
+        id: 1, //数据库id
+        type: 1, //选择题类型 1为单选 2为多选
+        question: "第1题xxxxxxxxxxxx", //题目题干
+        en_zn: false, //中英切换标志位  false为英文 zn为中文
+        answer: "a",//正确参考答案
+        answers: [{
+            index: "a",//答案索引
+            content: "a1",//英文选项
+            content_cn: "a1_cn",//中文选项
           },
           {
             index: "b",
@@ -130,8 +136,7 @@ Page({
         question: "第2题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "b",
-        answers: [
-          {
+        answers: [{
             index: "a",
             content: "A2",
             content_cn: "A2_cn",
@@ -161,8 +166,7 @@ Page({
         question: "第3题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "c",
-        answers: [
-          {
+        answers: [{
             index: "a",
             content: "a3",
             content_cn: "a3_cn",
@@ -191,8 +195,7 @@ Page({
         en_zn: false, //false为英文 zn为中文 中英切换
         question: "第4题",
         answer: "ab",
-        answers: [
-          {
+        answers: [{
             index: "a",
             content: "a4",
           },
@@ -222,8 +225,7 @@ Page({
         question: "第5题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "ac",
-        answers: [
-          {
+        answers: [{
             index: "a",
             content: "a5",
             content_cn: "a5_cn",
@@ -256,8 +258,7 @@ Page({
         question: "第6题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "cde",
-        answers: [
-          {
+        answers: [{
             index: "a",
             content: "a6",
           },
@@ -282,6 +283,8 @@ Page({
     ],
   },
 
+
+  //答案选择函数
   answerSelected(e) {
     let outterIndex = e.currentTarget.dataset.outterindex;
     let innerIndex = e.currentTarget.dataset.innerindex;
@@ -345,21 +348,27 @@ Page({
   },
 
 
+  //we-swiper的touchmove滑动事件函数
+  //滑动时，将 答案标志位 置100，100表示html答案选项的标签消失
   touchmove(e) {
     console.log(e)
     console.log("moving... github的");
-    this.setData({ flag: 100});
-    
+    this.setData({
+      flag: 100
+    });
+
   },
 
+
+  //确认答题按钮函数
   submit() {
     if (this.data.body[this.data.outterIndex].type == 1) {
       //如果是单选
 
       console.log(
         "你选的答案" +
-          this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
-            .index
+        this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
+        .index
       ); //你选的答案
       console.log(
         "题库正确答案" + this.data.body[this.data.outterIndex].answer
@@ -367,7 +376,7 @@ Page({
 
       if (
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
-          .index == this.data.body[this.data.outterIndex].answer
+        .index == this.data.body[this.data.outterIndex].answer
       ) {
         this.setData({
           flag: 1,
@@ -422,13 +431,17 @@ Page({
         console.log("xx同学你答错了");
       }
       //anwerAll清零,item.seletced清零
-      this.setData({ answerAll: [] });
+      this.setData({
+        answerAll: []
+      });
       for (let item of this.data.body[this.data.outterIndex].answers) {
         item.selected = false;
       }
 
       //清空answerAll
-      this.setData({ answerAll: [] });
+      this.setData({
+        answerAll: []
+      });
     }
   },
 
@@ -440,14 +453,18 @@ Page({
     for (let item of this.data.body[this.data.outterIndex].answers) {
       item.selected = false;
     }
-    
+
     console.log(e)
     console.log("changeswiper222微信自带");
     let currentTab
-    this.setData({currentTab:e.detail.current})
+    this.setData({
+      currentTab: e.detail.current
+    })
     console.log(currentTab)
   },
-  //获取input的输入值
+
+
+  //获取用户input的输入值
   getInputValue(e) {
     // console.log(e.detail.value)// {value: "ff", cursor: 2}
     var input = this.data.input_page;
@@ -458,7 +475,8 @@ Page({
     });
   },
 
-  //跳转函数
+
+  //跳转页面函数
   goto() {
     var input_page = this.data.input_page - 1;
     console.log(typeof input_page);
@@ -468,17 +486,20 @@ Page({
     });
   },
 
+  //翻转切换中英文en_zn标志位flag函数
   toggle(e) {
     console.log(e)
     let toggle = this.data.body[this.data.currentTab].en_zn;
     console.log(toggle);
     toggle = !toggle;
     console.log(toggle);
-    console.log(this.data.outterIndex,this.data.innerIndex)
+    console.log(this.data.outterIndex, this.data.innerIndex)
     var str = "body[" + this.data.currentTab + "].en_zn";
-    this.setData({ [str]: toggle });
+    this.setData({
+      [str]: toggle
+    });
     console.log("aa");
-   
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -488,6 +509,8 @@ Page({
    */
 
   onLoad: function () {
+
+//微信自带swiper调整为竖向模式的相关函数
     var data = this.data;
     console.log(data);
     var that = this;
@@ -498,6 +521,8 @@ Page({
         });
       },
     });
+
+
   },
 
   getUserInfo: function () {
@@ -536,13 +561,6 @@ Page({
     });
   },
 
-  // swiperchange: function(e) {
-  //   var that = this
-  //   console.log(e.detail.current)
-  //   that.setData({
-  //     'currentTab': e.detail.current
-  //   })
-  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
