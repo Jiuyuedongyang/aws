@@ -102,11 +102,11 @@ Page({
         type: 1, //选择题类型 1为单选 2为多选
         question: "第1题xxxxxxxxxxxx", //题目题干
         en_zn: false, //中英切换标志位  false为英文 zn为中文
-        answer: "a",//正确参考答案
+        answer: "a", //正确参考答案
         answers: [{
-            index: "a",//答案索引
-            content: "a1",//英文选项
-            content_cn: "a1_cn",//中文选项
+            index: "a", //答案索引
+            content: "a1", //英文选项
+            content_cn: "a1_cn", //中文选项
           },
           {
             index: "b",
@@ -486,7 +486,7 @@ Page({
     });
   },
 
-  //翻转切换中英文en_zn标志位flag函数
+  //翻转 切换中英文en_zn标志位flag函数
   toggle(e) {
     console.log(e)
     let toggle = this.data.body[this.data.currentTab].en_zn;
@@ -501,16 +501,16 @@ Page({
     console.log("aa");
 
   },
+
+
+
+  
   /**
    * 生命周期函数--监听页面加载
    */
-  /**
-   *  手指触碰weswiper并且拖动slide时执行
-   */
-
   onLoad: function () {
 
-//微信自带swiper调整为竖向模式的相关函数
+    //微信自带swiper调整为竖向模式的相关函数
     var data = this.data;
     console.log(data);
     var that = this;
@@ -521,7 +521,6 @@ Page({
         });
       },
     });
-
 
   },
 
