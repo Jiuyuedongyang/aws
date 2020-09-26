@@ -56,7 +56,7 @@
 <view class="footbar">
   <view class="footbar_container">
     <view class="footbar_container_a">
-      <!-- input输入框，绑定getInputValue世界和定义输入框最大长度为maxlength="3" -->
+      <!-- input输入框，绑定getInputValue世界和定义输入框最大长度为maxlength="3"类型仅为number -->
       <input class="footbar_container_a_1" bindinput='getInputValue' maxlength="3" type="number" placeholder="题号"/>
       <view class="footbar_container_a_2" bindtap="goto">跳转</view>
       <view class="footbar_container_a_3 submit_btn" bindtap="submit">提交</view>
