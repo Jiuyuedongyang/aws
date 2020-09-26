@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/saa/index",
+    "pages/ccp/index",
+    "pages/sap/index",
+    "pages/about/index",
+    "pages/exam/index",
+    "pages/exam_English/index",
+    "pages/exam_collection/index",
+    "pages/exam_simulated/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#99CCFF",
+    "navigationBarTitleText": "aws",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      { "pagePath": "pages/ccp/index", "text": "a" },
+      { "pagePath": "pages/saa/index", "text": "b" },
+      { "pagePath": "pages/sap/index", "text": "c" },
+      {
+        "pagePath": "pages/about/index",
+        "text": "我"
+      }
+    ]
+  }
+}

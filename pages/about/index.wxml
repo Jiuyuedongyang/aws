@@ -1,0 +1,20 @@
+<!--pages/about/index.wxml-->
+<view class="user_info">
+  <image class="avatar" src="{{userInfo.avatarUrl}}">
+   
+  </image>
+   <button class="avatar_button" bindgetuserinfo="handleGetUserInfo" style='display:{{isShow?"block":"none"}}' open-type="getUserInfo">
+    <text class="text">点击获取头像</text>
+    </button>
+  <view class="user_info_right">
+    <text class="userName">hello,{{userInfo.nickName}}!</text>
+    <text>欢迎来到aws考试</text>
+  </view>
+</view>
+
+  <view class="exam_info">
+    <view>考试代码 a</view>
+    <view>及格分数 75%</view>
+    <view>考试题数 65题</view>
+    <view>题库总数 400题</view>
+  </view>

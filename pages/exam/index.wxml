@@ -1,0 +1,58 @@
+<!-- pages/exam/index.wxml -->
+<view>
+  <swiper style="height: {{clientHeight?clientHeight+'px':'auto'}}" current="{{currentTab}}" duration="500" bindchange="swiperchange"  current="{{currentTab}}" >
+    <view class="we-wrapper" bindtouchmove="touchmove">
+    <swiper-item wx:for="{{body}}" wx:for-index="outterIndex" wx:key="outter" wx:for-item="outterItem">
+      <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" enhanced="true" show-scrollbar="false" enable-back-to-top="true">
+        <view class="subject">
+          <view class="questions">第{{outterIndex+1}}题 总400题</view>
+          <view class="questions"
+          data-outidx="{{outterIndex}}" data-idx="{{innerIndex}}">{{outterItem.id}}. {{outterItem.question}}</view>
+          <view wx:if="{{body[outterIndex].answers[innerIndex].content}}" 
+            wx:for="{{body[outterIndex].answers}}" 
+            wx:for-index="innerIndex" 
+            wx:key="inner"
+            wx:for-item="innerItem"
+            bindtap="answerSelected" 
+            data-outterindex="{{outterIndex}}"
+            data-innerindex="{{innerIndex}}" 
+            
+            class="answers innerItem {{innerItem.selected?'active':''}}">
+            <view>{{innerItem.content}}</view>
+            <view></view>
+            <view wx:if="{{outterItem.en_zn}}">{{innerItem.content_cn}}</view>
+          </view>
+       
+          <view class="questions" wx:if="{{((flag==0)||(flag==1))}}">
+            <view>参考答案:{{body[outterIndex].answer}}</view>
+            <view wx:if="{{flag==1}}">恭喜你答对了!</view>
+            <view wx:else>答错了，再接再厉!</view>
+          </view>
+          
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </view>
+  </swiper>
+</view>
+<view class="placeholder">this is a placeholder</view>
+
+
+
+
+
+<view class="footbar">
+  <view class="footbar_container">
+    <view class="footbar_container_a">
+      <input class="footbar_container_a_1" bindinput='getInputValue'  maxlength="3" type="number" placeholder="题号"/>
+      <view class="footbar_container_a_2" bindtap="goto">跳转</view>
+      <view class="footbar_container_a_3 submit_btn" bindtap="submit">提交</view>
+    </view>
+    <view class="footbar_container_b">
+      <view>重置</view>
+      <view>收藏</view>
+      <view bindtap="toggle">中/英</view>
+      <view>正确率:200/300=0.66</view>
+    </view>
+  </view>
+</view>
