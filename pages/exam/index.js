@@ -286,44 +286,41 @@ Page({
 
   //答案选择函数
   answerSelected(e) {
-    let outterIndex = e.currentTarget.dataset.outterindex;
+    let outterIndex = e.currentTarget.dataset.outterindex; //获取回调函数e的outterindex 和 innerindex数据 注：outterindex 和 innerindex都是小写，为微信e里规定的
     let innerIndex = e.currentTarget.dataset.innerindex;
-    let question = this.data.body[outterIndex];
+    let question = this.data.body[outterIndex]; //获取题目题干
 
+    //当为单选题时
     if (question.type == 1) {
-      //单选
+      //先将所有选项置false
       for (let item of question.answers) {
         item.selected = false;
       }
+      //置true
       question.answers[innerIndex].selected = true;
+      //将获取到的 let outterIndex = e.currentTarget.dataset.outterindex;和innerindex 数据写入setData中 以便后续submit按钮判断正确答案
       this.setData({
         body: this.data.body,
-
         outterIndex: outterIndex,
         innerIndex: innerIndex,
       });
-    } else if (question.type == 2) {
       //多选
+    } else if (question.type == 2) {
+
       console.log("这是多选题");
-      let answerAll = this.data.answerAll;
-
+      let answerAll = this.data.answerAll; //获取data中的answerAll
       question.answers[innerIndex].selected = !question.answers[innerIndex]
-        .selected;
-      console.log(answerAll);
+        .selected; //点击一次选择，再次点击取消选择
+      // console.log(answerAll);
 
-      this.setData({
-        body: this.data.body,
-        answerAll: this.data.answerAll,
 
-        outterIndex: outterIndex,
-        innerIndex: innerIndex,
-      });
-
+      //判断 如果answerAll中包含了所选的了（防止反复往answerAll中push a a a a），就remove掉，否则就push进多选题数组
       if (
         answerAll.includes(
           this.data.body[outterIndex].answers[innerIndex].index
         )
       ) {
+        //因为js本身没有remove()函数，所以构造一个remove元素的函数
         //你可以在Array的原型链上写一个remove的方法
         Array.prototype.remove = function (val) {
           var index = this.indexOf(val);
@@ -334,17 +331,33 @@ Page({
         //使用.remove()方法
         answerAll.remove(this.data.body[outterIndex].answers[innerIndex].index);
       } else {
+        //否则push入多选答案数组中
         answerAll.push(this.data.body[outterIndex].answers[innerIndex].index);
       }
-      console.log(answerAll);
-      answerAll = answerAll.toString().replace(/,/g, ""); //将数组转化为字符串并且用正则去掉其中的,逗号
-      console.log(answerAll);
+      //回写入data中
+      this.setData({
+        body: this.data.body,
+        answerAll: this.data.answerAll,
+        outterIndex: outterIndex,
+        innerIndex: innerIndex,
+      });
+
+      answerAll = answerAll.toString().replace(/,/g, ""); //将数组转化为字符串并且用正则去掉其中的,逗号 为后续submit判断答案时做准备
+      // console.log(answerAll);
+      console.log("set之后的答案" + answerAll);
     }
 
-    console.log(e);
-    console.log(outterIndex);
-    console.log(innerIndex);
-    console.log(question);
+
+    /////////存疑
+    // 这里无论写不写answerAll: this.data.answerAll,都是正确的,初步判断是数组引用复制直接修改了data的置,所以不用谢answerAll: this.data.answerAll也是可以录到data的,有待考证
+    ////////////////
+
+
+
+    // console.log(e);
+    // console.log(outterIndex);
+    // console.log(innerIndex);
+    // console.log(question);
   },
 
 
@@ -356,15 +369,13 @@ Page({
     this.setData({
       flag: 100
     });
-
   },
 
 
   //确认答题按钮函数
   submit() {
+    //如果是单选
     if (this.data.body[this.data.outterIndex].type == 1) {
-      //如果是单选
-
       console.log(
         "你选的答案" +
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
@@ -374,74 +385,79 @@ Page({
         "题库正确答案" + this.data.body[this.data.outterIndex].answer
       ); //题库正确答案
 
+
+      //如果回答正确
       if (
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
         .index == this.data.body[this.data.outterIndex].answer
       ) {
         this.setData({
-          flag: 1,
+          flag: 1, //答题标志位置1
         });
         console.log("单选题回答正确");
       } else {
         this.setData({
-          flag: 0,
+          flag: 0, //否则置0
         });
         console.log("单选题回答错误");
       }
     } else if (this.data.body[this.data.outterIndex].type == 2) {
       //如果是多选
       console.log("abcdefg");
+      console.log(this.data.answerAll)
       let answerAll = this.data.answerAll;
-      // console.log("pand"+(answerAll  == this.data.body[this.data.outterIndex].answer))
+
 
       answerAll = answerAll.toString().replace(/,/g, ""); //将数组转化为字符串并且用正则去掉其中的,逗号
       answerAll = answerAll.split(""); //再把字符串转成数组
 
-      //判断两个数组是否相等
-      // var a = ["type", 2, 3];
-      // var b = ["type", 3, 2];
-      // var isSameArray = function (array1, array2) {
-      //     array1 = array1.sort().join('');
-      //     array2 = array2.sort().join('');
-      //     return array1 === array2;
-      //   };
-      // console.log(isSameArray(a, b))
-      // 作者：九千_
-      // 链接：https://www.jianshu.com/p/34dcd1c6f753
-      // 来源：简书
-      // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+      /**
+            判断两个数组是否相等
+            var a = ["type", 2, 3];
+            var b = ["type", 3, 2];
+            var isSameArray = function (array1, array2) {
+                array1 = array1.sort().join('');
+                array2 = array2.sort().join('');
+                return array1 === array2;
+              };
+            console.log(isSameArray(a, b))
+            作者：九千_
+            链接：https://www.jianshu.com/p/34dcd1c6f753
+            来源：简书
+            著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+       */
+
 
       //answerAll用户所选的答案
       answerAll = answerAll.sort().join("");
 
-      //answer是数据库中的正确答案
+      //this.data.body[this.data.outterIndex].answer;是数据库中的题目正确答案
       let answer = this.data.body[this.data.outterIndex].answer;
       answer = answer.split(""); //再把字符串转成数组
       answer = answer.sort().join("");
 
       if (answerAll == answer) {
         this.setData({
-          flag: 1,
+          flag: 1, //标志位置1
         });
-        console.log("x同学你答对了");
+        console.log("同学你答对了");
       } else {
         this.setData({
           flag: 0,
         });
-        console.log("xx同学你答错了");
+        console.log("同学你答错了");
       }
-      //anwerAll清零,item.seletced清零
+
+      //anwerAll清零
       this.setData({
         answerAll: []
       });
+      //选项item.seletced清零
       for (let item of this.data.body[this.data.outterIndex].answers) {
         item.selected = false;
       }
 
-      //清空answerAll
-      this.setData({
-        answerAll: []
-      });
+
     }
   },
 
@@ -504,7 +520,7 @@ Page({
 
 
 
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
