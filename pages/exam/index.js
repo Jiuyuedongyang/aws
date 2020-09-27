@@ -335,6 +335,7 @@ Page({
         answerAll.push(this.data.body[outterIndex].answers[innerIndex].index);
       }
       //回写入data中
+      //写不写answerAll: this.data.answerAll,其实都一样，因为.push直接是修改了原数组，这是个知识点
       this.setData({
         body: this.data.body,
         answerAll: this.data.answerAll,
@@ -347,13 +348,6 @@ Page({
       console.log("set之后的答案" + answerAll);
     }
 
-
-    /////////存疑
-    // 这里无论写不写answerAll: this.data.answerAll,都是正确的,初步判断是数组引用复制直接修改了data的置,所以不用谢answerAll: this.data.answerAll也是可以录到data的,有待考证
-    ////////////////
-
-
-
     // console.log(e);
     // console.log(outterIndex);
     // console.log(innerIndex);
@@ -365,7 +359,7 @@ Page({
   //滑动时，将 答案标志位 置100，100表示html答案选项的标签消失
   touchmove(e) {
     console.log(e)
-    console.log("moving... github的");
+    // console.log("moving... github的");
     this.setData({
       flag: 100
     });
@@ -376,17 +370,18 @@ Page({
   submit() {
     //如果是单选
     if (this.data.body[this.data.outterIndex].type == 1) {
-      console.log(
-        "你选的答案" +
-        this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
-        .index
-      ); //你选的答案
-      console.log(
-        "题库正确答案" + this.data.body[this.data.outterIndex].answer
-      ); //题库正确答案
+      // console.log(
+      //   "你选的答案" +
+      //   this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
+      //   .index
+      // ); //你选的答案
+      // console.log(
+      //   "题库正确答案" + this.data.body[this.data.outterIndex].answer
+      // ); //题库正确答案
 
 
-      //如果回答正确
+      //如果回答正确 
+      //所选答案等于题库答案
       if (
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
         .index == this.data.body[this.data.outterIndex].answer
@@ -394,20 +389,18 @@ Page({
         this.setData({
           flag: 1, //答题标志位置1
         });
-        console.log("单选题回答正确");
+        // console.log("单选题回答正确");
       } else {
         this.setData({
           flag: 0, //否则置0
         });
-        console.log("单选题回答错误");
+        // console.log("单选题回答错误");
       }
     } else if (this.data.body[this.data.outterIndex].type == 2) {
       //如果是多选
-      console.log("abcdefg");
+      // console.log("abcdefg");
       console.log(this.data.answerAll)
       let answerAll = this.data.answerAll;
-
-
       answerAll = answerAll.toString().replace(/,/g, ""); //将数组转化为字符串并且用正则去掉其中的,逗号
       answerAll = answerAll.split(""); //再把字符串转成数组
 
@@ -416,7 +409,7 @@ Page({
             var a = ["type", 2, 3];
             var b = ["type", 3, 2];
             var isSameArray = function (array1, array2) {
-                array1 = array1.sort().join('');
+                array1 = array1.sort().join(''); //.sort()排序
                 array2 = array2.sort().join('');
                 return array1 === array2;
               };
@@ -429,26 +422,26 @@ Page({
 
 
       //answerAll用户所选的答案
-      answerAll = answerAll.sort().join("");
+      answerAll = answerAll.sort().join(""); //.sort()排序
 
       //this.data.body[this.data.outterIndex].answer;是数据库中的题目正确答案
       let answer = this.data.body[this.data.outterIndex].answer;
       answer = answer.split(""); //再把字符串转成数组
-      answer = answer.sort().join("");
+      answer = answer.sort().join(""); //.sort()排序
 
       if (answerAll == answer) {
         this.setData({
           flag: 1, //标志位置1
         });
-        console.log("同学你答对了");
+        // console.log("同学你答对了");
       } else {
         this.setData({
           flag: 0,
         });
-        console.log("同学你答错了");
+        // console.log("同学你答错了");
       }
 
-      //anwerAll清零
+      //答对后anwerAll清零，为下次答题做准备
       this.setData({
         answerAll: []
       });
@@ -463,20 +456,29 @@ Page({
 
   //页面滑动时清除item.selectd选项，让用户在回来做这题的时候所有选项清零
   swiperchange(e) {
-    console.log(this.data.currentTab)
-    console.log("changeswiper微信自带");
-    console.log(this.data.innerIndex);
+    // console.log(this.data.currentTab)
+    // console.log("changeswiper微信自带");
+    // console.log(this.data.innerIndex);
+
+    //将所有答案置false
     for (let item of this.data.body[this.data.outterIndex].answers) {
       item.selected = false;
     }
 
-    console.log(e)
-    console.log("changeswiper222微信自带");
-    let currentTab
+    // console.log(e)
+    // console.log("changeswiper222微信自带");
+
+
+    //////////////////////存疑
+    // let currentTab
+    //////////////////////存疑
+
+
+    //setData把currentTab写入全局，让其他函数知道当前页是哪一页
     this.setData({
       currentTab: e.detail.current
     })
-    console.log(currentTab)
+    // console.log(currentTab)
   },
 
 
@@ -494,8 +496,9 @@ Page({
 
   //跳转页面函数
   goto() {
+    //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
-    console.log(typeof input_page);
+
     console.log(input_page);
     this.setData({
       currentTab: input_page,
@@ -506,16 +509,16 @@ Page({
   toggle(e) {
     console.log(e)
     let toggle = this.data.body[this.data.currentTab].en_zn;
-    console.log(toggle);
+    // console.log(toggle);
     toggle = !toggle;
-    console.log(toggle);
+    // console.log(toggle);
     console.log(this.data.outterIndex, this.data.innerIndex)
+    //带变量的写法，具体参考https://www.cnblogs.com/simuhunluo/p/7989461.html
     var str = "body[" + this.data.currentTab + "].en_zn";
     this.setData({
       [str]: toggle
     });
-    console.log("aa");
-
+    // console.log("aa");
   },
 
 
@@ -525,7 +528,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-
     //微信自带swiper调整为竖向模式的相关函数
     var data = this.data;
     console.log(data);
@@ -537,7 +539,6 @@ Page({
         });
       },
     });
-
   },
 
 
