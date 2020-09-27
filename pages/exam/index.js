@@ -359,7 +359,7 @@ Page({
   //滑动时，将 答案标志位 置100，100表示html答案选项的标签消失
   touchmove(e) {
     console.log(e)
-    // console.log("moving... github的");
+    console.log("moving... github的");
     this.setData({
       flag: 100
     });
@@ -459,7 +459,8 @@ Page({
     // console.log(this.data.currentTab)
     // console.log("changeswiper微信自带");
     // console.log(this.data.innerIndex);
-
+    console.log(e)
+    console.log(e.detail.current)
     //将所有答案置false
     for (let item of this.data.body[this.data.outterIndex].answers) {
       item.selected = false;
@@ -475,9 +476,15 @@ Page({
 
 
     //setData把currentTab写入全局，让其他函数知道当前页是哪一页
-    this.setData({
-      currentTab: e.detail.current
-    })
+    if (e.detail.source =="touch"){
+      console.log("touch")
+      this.setData({
+        currentTab: e.detail.current
+      })
+    }else{
+      console.log("autoplay")
+    }
+    
     // console.log(currentTab)
   },
 
@@ -501,6 +508,8 @@ Page({
 
     console.log(input_page);
     this.setData({
+
+      flag: 100,
       currentTab: input_page,
     });
   },

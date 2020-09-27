@@ -9,8 +9,7 @@
     <!-- outterIndex是题目循环，innerIndex是答案选项循环   定义wx:for-item="outterItem" "innerItem"以区分内外层 -->
     <view class="we-wrapper" bindtouchmove="touchmove">
       <swiper-item wx:for="{{body}}" wx:for-index="outterIndex" wx:key="outter" wx:for-item="outterItem">
-        <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}" enhanced="true"
-          show-scrollbar="false" enable-back-to-top="true">
+        <scroll-view scroll-y="{{true}}" style="height:{{clientHeight?clientHeight+'px':'auto'}}" enhanced="true" show-scrollbar="false" enable-back-to-top="true">
           <view class="subject">
 
             <!-- 题目 -->
