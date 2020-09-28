@@ -37,7 +37,7 @@
   "compileType": "miniprogram",
   "libVersion": "2.13.0",
   "appid": "wx768b156663613a1c",
-  "projectname": "aws%20github%E7%89%88",
+  "projectname": "aws",
   "debugOptions": {
     "hidedInDevtools": []
   },

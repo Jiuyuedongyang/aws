@@ -17,65 +17,70 @@ const option = {
     new weSwiper({
       animationViewName: "animationData",
       initialSlide: 0,
-      /**
-       * swiper初始化后执行
-       * @param weswiper
-       */
-      onInit(weswiper) {},
-      /**
-       * 手指碰触slide时执行
-       * @param weswiper
-       * @param event
-       */
-      onTouchStart(weswiper, event) {},
-      /**
-       * 手指碰触slide并且滑动时执行
-       * @param weswiper
-       * @param event
-       */
-      onTouchMove(weswiper, event) {},
-      /**
-       * 手指离开slide时执行
-       * @param weswiper
-       * @param event
-       */
-      onTouchEnd(weswiper, event) {},
-      /**
-       *  slide达到过渡条件时执行
-       */
-      onSlideChangeStart(weswiper) {},
-      /**
-       *  weswiper从一个slide过渡到另一个slide结束时执行
-       */
-      onSlideChangeEnd(weswiper) {},
-      /**
-       *  过渡时触发
-       */
-      onTransitionStart(weswiper) {},
-      /**
-       *  过渡结束时执行
-       */
-      onTransitionEnd(weswiper) {},
-      /**
-       *  手指触碰weswiper并且拖动slide时执行
-       */
-      onSlideMove(weswiper) {},
-      /**
-       * slide达到过渡条件 且规定了方向 向前（右、下）切换时执行
-       */
-      onSlideNextStart(weswiper) {},
-      /**
-       *  slide达到过渡条件 且规定了方向 向前（右、下）切换结束时执行
-       */
-      onSlideNextEnd(weswiper) {},
-      /**
-       *  slide达到过渡条件 且规定了方向 向前（左、上）切换时执行
-       */
-      onSlidePrevStart(swiper) {},
-      /**
-       *  slide达到过渡条件 且规定了方向 向前（左、上）切换结束时执行
-       */
-      onSlidePrevEnd(weswiper) {},
+      // /**
+      //  * 
+      //  * 
+      //  * 
+      //  * /**
+      //  * swiper初始化后执行
+      //  * @param weswiper
+      //  */
+      // onInit(weswiper) {},
+      // /**
+      //  * 手指碰触slide时执行
+      //  * @param weswiper
+      //  * @param event
+      //  */
+      // onTouchStart(weswiper, event) {},
+      // /**
+      //  * 手指碰触slide并且滑动时执行
+      //  * @param weswiper
+      //  * @param event
+      //  */
+      // onTouchMove(weswiper, event) {},
+      // /**
+      //  * 手指离开slide时执行
+      //  * @param weswiper
+      //  * @param event
+      //  */
+      // onTouchEnd(weswiper, event) {},
+      // /**
+      //  *  slide达到过渡条件时执行
+      //  */
+      // onSlideChangeStart(weswiper) {},
+      // /**
+      //  *  weswiper从一个slide过渡到另一个slide结束时执行
+      //  */
+      // onSlideChangeEnd(weswiper) {},
+      // /**
+      //  *  过渡时触发
+      //  */
+      // onTransitionStart(weswiper) {},
+      // /**
+      //  *  过渡结束时执行
+      //  */
+      // onTransitionEnd(weswiper) {},
+      // /**
+      //  *  手指触碰weswiper并且拖动slide时执行
+      //  */
+      // onSlideMove(weswiper) {},
+      // /**
+      //  * slide达到过渡条件 且规定了方向 向前（右、下）切换时执行
+      //  */
+      // onSlideNextStart(weswiper) {},
+      // /**
+      //  *  slide达到过渡条件 且规定了方向 向前（右、下）切换结束时执行
+      //  */
+      // onSlideNextEnd(weswiper) {},
+      // /**
+      //  *  slide达到过渡条件 且规定了方向 向前（左、上）切换时执行
+      //  */
+      // onSlidePrevStart(swiper) {},
+      // /**
+      //  *  slide达到过渡条件 且规定了方向 向前（左、上）切换结束时执行
+      //  */
+      // onSlidePrevEnd(weswiper) {},
+      //  */
     });
   },
 };
@@ -92,7 +97,9 @@ Page({
     flag: 100, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
     currentTab: 0, //当前swiper的页数
     answerAll: [], //多选题数组
-
+    count_right: 0, //已答题正确数
+    count_sum: 0, //已答总数
+    right_rate: 0, //正确率
 
     /** 
     body为题目主体 
@@ -103,6 +110,7 @@ Page({
         question: "第1题xxxxxxxxxxxx", //题目题干
         en_zn: false, //中英切换标志位  false为英文 zn为中文
         answer: "a", //正确参考答案
+        answer_or_not: false,
         answers: [{
             index: "a", //答案索引
             content: "a1", //英文选项
@@ -136,6 +144,7 @@ Page({
         question: "第2题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "b",
+        answer_or_not: false,
         answers: [{
             index: "a",
             content: "A2",
@@ -166,6 +175,7 @@ Page({
         question: "第3题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "c",
+        answer_or_not: false,
         answers: [{
             index: "a",
             content: "a3",
@@ -195,6 +205,7 @@ Page({
         en_zn: false, //false为英文 zn为中文 中英切换
         question: "第4题",
         answer: "ab",
+        answer_or_not: false,
         answers: [{
             index: "a",
             content: "a4",
@@ -225,6 +236,7 @@ Page({
         question: "第5题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "ac",
+        answer_or_not: false,
         answers: [{
             index: "a",
             content: "a5",
@@ -258,6 +270,7 @@ Page({
         question: "第6题",
         en_zn: false, //false为英文 zn为中文 中英切换
         answer: "cde",
+        answer_or_not: false,
         answers: [{
             index: "a",
             content: "a6",
@@ -386,9 +399,19 @@ Page({
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
         .index == this.data.body[this.data.outterIndex].answer
       ) {
-        this.setData({
-          flag: 1, //答题标志位置1
-        });
+
+        if (this.data.body[this.data.currentTab].answer_or_not == false) {
+          let count_right = this.data.count_right
+          count_right++
+
+          this.setData({
+            flag: 1, //答题标志位置1
+            count_right
+          });
+        }
+
+
+
         // console.log("单选题回答正确");
       } else {
         this.setData({
@@ -430,10 +453,18 @@ Page({
       answer = answer.sort().join(""); //.sort()排序
 
       if (answerAll == answer) {
-        this.setData({
-          flag: 1, //标志位置1
-        });
-        // console.log("同学你答对了");
+        if (this.data.body[this.data.currentTab].answer_or_not == false) {
+          let count_right = this.data.count_right
+          count_right++
+
+          this.setData({
+            flag: 1, //标志位置1
+            count_right
+          });
+          // console.log("同学你答对了");
+        }
+
+
       } else {
         this.setData({
           flag: 0,
@@ -449,9 +480,36 @@ Page({
       for (let item of this.data.body[this.data.outterIndex].answers) {
         item.selected = false;
       }
-
-
     }
+
+
+    console.log(this.data.body[this.data.currentTab].answer_or_not)
+    //判断该题目是否答过 answer_or_not==false
+    if (this.data.body[this.data.currentTab].answer_or_not == false) {
+      //带变量的写法，具体参考https://www.cnblogs.com/simuhunluo/p/7989461.html
+
+      //没答过 总答题个数加一
+      let count_sum = this.data.count_sum
+      count_sum++
+
+      //将answer_or_not置true表示答过了,count_sum便不再计数
+      let str = "body[" + this.data.currentTab + "].answer_or_not";
+      this.setData({
+        [str]: true,
+        count_sum
+      });
+      // console.log(this.data.body[this.data.currentTab].answer_or_not)
+    }
+
+    let count_right = this.data.count_right
+    let count_sum = this.data.count_sum
+
+    let right_rate = count_right / count_sum * 100
+    right_rate = right_rate.toFixed(2)
+    this.setData({
+      right_rate
+    })
+    console.log(right_rate)
   },
 
   //页面滑动时清除item.selectd选项，让用户在回来做这题的时候所有选项清零
@@ -476,15 +534,15 @@ Page({
 
 
     //setData把currentTab写入全局，让其他函数知道当前页是哪一页
-    if (e.detail.source =="touch"){
+    if (e.detail.source == "touch") {
       console.log("touch")
       this.setData({
         currentTab: e.detail.current
       })
-    }else{
+    } else {
       console.log("autoplay")
     }
-    
+
     // console.log(currentTab)
   },
 
@@ -523,7 +581,7 @@ Page({
     // console.log(toggle);
     console.log(this.data.outterIndex, this.data.innerIndex)
     //带变量的写法，具体参考https://www.cnblogs.com/simuhunluo/p/7989461.html
-    var str = "body[" + this.data.currentTab + "].en_zn";
+    let str = "body[" + this.data.currentTab + "].en_zn";
     this.setData({
       [str]: toggle
     });

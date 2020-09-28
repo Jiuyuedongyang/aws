@@ -62,7 +62,7 @@
       <view>重置</view>
       <view>收藏</view>
       <view bindtap="toggle">中/英</view>
-      <view>正确率:200/300=0.66</view>
+      <view>正确率:{{count_right}}/{{count_sum}}={{right_rate}}%</view>
     </view>
   </view>
 </view>
