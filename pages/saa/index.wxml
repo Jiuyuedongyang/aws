@@ -26,7 +26,6 @@
         <view>全英文</view>
         <view>全英文答题</view>
       </view>
-
     </navigator>
     <navigator class="row_1" url='/pages/exam_collection/index'>
       <image src="../../images/1.jpg" class="iamge_3"></image>
@@ -40,6 +39,13 @@
       <view>
         <view>模拟考试</view>
         <view>模拟练习答题</view>
+      </view>
+    </navigator>
+    <navigator class="row_1" url='/pages/exam_quick/index'>
+      <image src="../../images/1.jpg" class="iamge_4"></image>
+      <view>
+        <view>快速强记</view>
+        <view>快速强记答题</view>
       </view>
     </navigator>
   </view>
