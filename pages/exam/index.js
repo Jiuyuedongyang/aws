@@ -105,195 +105,196 @@ Page({
     body为题目主体 
     */
     body: [{
-        id: 1, //数据库id
-        type: 1, //选择题类型 1为单选 2为多选
-        question: "第1题xxxxxxxxxxxx", //题目题干
-        en_zn: false, //中英切换标志位  false为英文 zn为中文
-        answer: "a", //正确参考答案
-        answer_or_not: false,
-        answers: [{
-            index: "a", //答案索引
-            content: "a1", //英文选项
-            content_cn: "a1_cn", //中文选项
-          },
-          {
-            index: "b",
-            content: "b1",
-            content_cn: "b1_cn",
-          },
-          {
-            index: "c",
-            content: "c1",
-            content_cn: "c1_cn",
-          },
-          {
-            index: "d",
-            content: "d1",
-            content_cn: "d1_cn",
-          },
-          {
-            index: "e",
-            content: "e1",
-            content_cn: "e1_cn",
-          },
-        ],
-      },
-      {
-        id: 2,
-        type: 1,
-        question: "第2题",
-        en_zn: false, //false为英文 zn为中文 中英切换
-        answer: "b",
-        answer_or_not: false,
-        answers: [{
-            index: "a",
-            content: "A2",
-            content_cn: "A2_cn",
-          },
-          {
-            index: "b",
-            content: "b2",
-            content_cn: "B2_cn",
-          },
-          {
-            index: "c",
-            content: "c2",
-          },
-          {
-            index: "d",
-            content: "d2",
-          },
-          {
-            index: "e",
-            content: "",
-          },
-        ],
-      },
-      {
-        id: 3,
-        type: 1,
-        question: "第3题",
-        en_zn: false, //false为英文 zn为中文 中英切换
-        answer: "c",
-        answer_or_not: false,
-        answers: [{
-            index: "a",
-            content: "a3",
-            content_cn: "a3_cn",
-          },
-          {
-            index: "b",
-            content: "b3",
-          },
-          {
-            index: "c",
-            content: "c3",
-          },
-          {
-            index: "d",
-            content: "d3",
-          },
-          {
-            index: "e",
-            content: "e3",
-          },
-        ],
-      },
-      {
-        id: 4,
-        type: 2,
-        en_zn: false, //false为英文 zn为中文 中英切换
-        question: "第4题",
-        answer: "ab",
-        answer_or_not: false,
-        answers: [{
-            index: "a",
-            content: "a4",
-          },
-          {
-            index: "b",
-            content: "b4",
-          },
-          {
-            index: "c",
-            content: "c4",
-            content_cn: "c4_cn",
-          },
-          {
-            index: "d",
-            content: "d4",
-            content_cn: "d4_cn",
-          },
-          {
-            index: "e",
-            content: "",
-          },
-        ],
-      },
-      {
-        id: 5,
-        type: 2,
-        question: "第5题",
-        en_zn: false, //false为英文 zn为中文 中英切换
-        answer: "ac",
-        answer_or_not: false,
-        answers: [{
-            index: "a",
-            content: "a5",
-            content_cn: "a5_cn",
-          },
-          {
-            index: "b",
-            content: "b5",
-            content_cn: "b5_cn",
-          },
-          {
-            index: "c",
-            content: "c5",
-            content_cn: "c5_cn",
-          },
-          {
-            index: "d",
-            content: "d5",
-            content_cn: "d5_cn",
-          },
-          {
-            index: "e",
-            content: "e5",
-            content_cn: "e5_cn",
-          },
-        ],
-      },
-      {
-        id: 6,
-        type: 2,
-        question: "第6题",
-        en_zn: false, //false为英文 zn为中文 中英切换
-        answer: "cde",
-        answer_or_not: false,
-        answers: [{
-            index: "a",
-            content: "a6",
-          },
-          {
-            index: "b",
-            content: "b6",
-          },
-          {
-            index: "c",
-            content: "c6",
-          },
-          {
-            index: "d",
-            content: "d6",
-          },
-          {
-            index: "e",
-            content: "e6",
-          },
-        ],
-      },
-    ],
+      id: 1, //数据库id
+      type: 1, //选择题类型 1为单选 2为多选
+      question: "第1题xxxxxxxxxxxx", //题目题干
+      en_zn: false, //中英切换标志位  false为英文 zn为中文
+      answer: "a", //正确参考答案
+      answer_or_not: false,
+      answers: [{
+          index: "a", //答案索引
+          content: "a1", //英文选项
+          content_cn: "a1_cn", //中文选项
+        },
+        {
+          index: "b",
+          content: "b1",
+          content_cn: "b1_cn",
+        },
+        {
+          index: "c",
+          content: "c1",
+          content_cn: "c1_cn",
+        },
+        {
+          index: "d",
+          content: "d1",
+          content_cn: "d1_cn",
+        },
+        {
+          index: "e",
+          content: "e1",
+          content_cn: "e1_cn",
+        },
+      ],
+    },
+    {
+      id: 2,
+      type: 1,
+      question: "第2题",
+      en_zn: false, //false为英文 zn为中文 中英切换
+      answer: "b",
+      answer_or_not: false,
+      answers: [{
+          index: "a",
+          content: "A2",
+          content_cn: "A2_cn",
+        },
+        {
+          index: "b",
+          content: "b2",
+          content_cn: "B2_cn",
+        },
+        {
+          index: "c",
+          content: "c2",
+        },
+        {
+          index: "d",
+          content: "d2",
+        },
+        {
+          index: "e",
+          content: "",
+        },
+      ],
+    },
+    {
+      id: 3,
+      type: 1,
+      question: "第3题",
+      en_zn: false, //false为英文 zn为中文 中英切换
+      answer: "c",
+      answer_or_not: false,
+      answers: [{
+          index: "a",
+          content: "a3",
+          content_cn: "a3_cn",
+        },
+        {
+          index: "b",
+          content: "b3",
+        },
+        {
+          index: "c",
+          content: "c3",
+        },
+        {
+          index: "d",
+          content: "d3",
+        },
+        {
+          index: "e",
+          content: "e3",
+        },
+      ],
+    },
+    {
+      id: 4,
+      type: 2,
+      en_zn: false, //false为英文 zn为中文 中英切换
+      question: "第4题",
+      answer: "ab",
+      answer_or_not: false,
+      answers: [{
+          index: "a",
+          content: "a4",
+        },
+        {
+          index: "b",
+          content: "b4",
+        },
+        {
+          index: "c",
+          content: "c4",
+          content_cn: "c4_cn",
+        },
+        {
+          index: "d",
+          content: "d4",
+          content_cn: "d4_cn",
+        },
+        {
+          index: "e",
+          content: "",
+        },
+      ],
+    },
+    {
+      id: 5,
+      type: 2,
+      question: "第5题",
+      en_zn: false, //false为英文 zn为中文 中英切换
+      answer: "ac",
+      answer_or_not: false,
+      answers: [{
+          index: "a",
+          content: "a5",
+          content_cn: "a5_cn",
+        },
+        {
+          index: "b",
+          content: "b5",
+          content_cn: "b5_cn",
+        },
+        {
+          index: "c",
+          content: "c5",
+          content_cn: "c5_cn",
+        },
+        {
+          index: "d",
+          content: "d5",
+          content_cn: "d5_cn",
+        },
+        {
+          index: "e",
+          content: "e5",
+          content_cn: "e5_cn",
+        },
+      ],
+    },
+    {
+      id: 6,
+      type: 2,
+      question: "第6题",
+      en_zn: false, //false为英文 zn为中文 中英切换
+      answer: "cde",
+      answer_or_not: false,
+      answers: [{
+          index: "a",
+          content: "a6",
+        },
+        {
+          index: "b",
+          content: "b6",
+        },
+        {
+          index: "c",
+          content: "c6",
+        },
+        {
+          index: "d",
+          content: "d6",
+        },
+        {
+          index: "e",
+          content: "e6",
+        },
+      ],
+    },
+  ],
+
   },
 
 
@@ -587,27 +588,64 @@ Page({
     });
     // console.log("aa");
   },
+clearAll(){
+  this.setData({
+    input_page: 1, //用户跳转页面默认为1
+    outterIndex: 0, //题号索引 外索引
+    innerIndex: 0, //选项索引 内索引
+    flag: 100, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+    currentTab: 0, //当前swiper的页数
+    answerAll: [], //多选题数组
+    count_right: 0, //已答题正确数
+    count_sum: 0, //已答总数
+    right_rate: 0, //正确率
+  })
+},
 
+// getData:function () {}的简写，向服务器获取题库源数据
+// getData(){
+// let that=this
+//   wx.request({
+//     url: 'http://abc.lycaicai.top:5000', //仅为示例，并非真实的接口地址
+//     data: {
+//       x: '',
+//       y: ''
+//     },
+//     header: {
+//       'content-type': 'application/json' // 默认值
+//     },
+//     success (res) {
+    
+//       // console.log(this.data)
+//     }
+//   })
+  
 
+// },
 
-
+adapt_screen(){
+  
+//微信自带swiper调整为竖向模式的相关函数
+var data = this.data;
+console.log(data);
+var that = this;
+wx.getSystemInfo({
+  success: function (res) {
+    that.setData({
+      clientHeight: res.windowHeight,
+    });
+  },
+});
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    //微信自带swiper调整为竖向模式的相关函数
-    var data = this.data;
-    console.log(data);
-    var that = this;
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          clientHeight: res.windowHeight,
-        });
-      },
-    });
+    this.adapt_screen()
+    // this.getData()
+   
+   
   },
-
 
 
   /**
@@ -619,7 +657,9 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {},
+  onShow: function () {
+
+  },
 
   /**
    * 生命周期函数--监听页面隐藏
