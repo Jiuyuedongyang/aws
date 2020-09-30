@@ -12,7 +12,7 @@
   </view>
 </view>
 <view>
-  <view wx:if="{{1}}" class="if_vip" bindtap="if_vip">aaa</view>
+  <view wx:if="{{0}}" class="if_vip" bindtap="if_vip">aaa</view>
   <view class="subject">
     <view class="row">
       <navigator class="row_1" url='/pages/exam/index'>
