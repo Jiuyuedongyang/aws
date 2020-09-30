@@ -17,70 +17,6 @@ const option = {
     new weSwiper({
       animationViewName: "animationData",
       initialSlide: 0,
-      // /**
-      //  * 
-      //  * 
-      //  * 
-      //  * /**
-      //  * swiper初始化后执行
-      //  * @param weswiper
-      //  */
-      // onInit(weswiper) {},
-      // /**
-      //  * 手指碰触slide时执行
-      //  * @param weswiper
-      //  * @param event
-      //  */
-      // onTouchStart(weswiper, event) {},
-      // /**
-      //  * 手指碰触slide并且滑动时执行
-      //  * @param weswiper
-      //  * @param event
-      //  */
-      // onTouchMove(weswiper, event) {},
-      // /**
-      //  * 手指离开slide时执行
-      //  * @param weswiper
-      //  * @param event
-      //  */
-      // onTouchEnd(weswiper, event) {},
-      // /**
-      //  *  slide达到过渡条件时执行
-      //  */
-      // onSlideChangeStart(weswiper) {},
-      // /**
-      //  *  weswiper从一个slide过渡到另一个slide结束时执行
-      //  */
-      // onSlideChangeEnd(weswiper) {},
-      // /**
-      //  *  过渡时触发
-      //  */
-      // onTransitionStart(weswiper) {},
-      // /**
-      //  *  过渡结束时执行
-      //  */
-      // onTransitionEnd(weswiper) {},
-      // /**
-      //  *  手指触碰weswiper并且拖动slide时执行
-      //  */
-      // onSlideMove(weswiper) {},
-      // /**
-      //  * slide达到过渡条件 且规定了方向 向前（右、下）切换时执行
-      //  */
-      // onSlideNextStart(weswiper) {},
-      // /**
-      //  *  slide达到过渡条件 且规定了方向 向前（右、下）切换结束时执行
-      //  */
-      // onSlideNextEnd(weswiper) {},
-      // /**
-      //  *  slide达到过渡条件 且规定了方向 向前（左、上）切换时执行
-      //  */
-      // onSlidePrevStart(swiper) {},
-      // /**
-      //  *  slide达到过渡条件 且规定了方向 向前（左、上）切换结束时执行
-      //  */
-      // onSlidePrevEnd(weswiper) {},
-      //  */
     });
   },
 };
@@ -104,196 +40,7 @@ Page({
     /** 
     body为题目主体 
     */
-    body: [{
-      id: 1, //数据库id
-      type: 1, //选择题类型 1为单选 2为多选
-      question: "第1题xxxxxxxxxxxx", //题目题干
-      en_zn: false, //中英切换标志位  false为英文 zn为中文
-      answer: "a", //正确参考答案
-      answer_or_not: false,
-      answers: [{
-          index: "a", //答案索引
-          content: "a1", //英文选项
-          content_cn: "a1_cn", //中文选项
-        },
-        {
-          index: "b",
-          content: "b1",
-          content_cn: "b1_cn",
-        },
-        {
-          index: "c",
-          content: "c1",
-          content_cn: "c1_cn",
-        },
-        {
-          index: "d",
-          content: "d1",
-          content_cn: "d1_cn",
-        },
-        {
-          index: "e",
-          content: "e1",
-          content_cn: "e1_cn",
-        },
-      ],
-    },
-    {
-      id: 2,
-      type: 1,
-      question: "第2题",
-      en_zn: false, //false为英文 zn为中文 中英切换
-      answer: "b",
-      answer_or_not: false,
-      answers: [{
-          index: "a",
-          content: "A2",
-          content_cn: "A2_cn",
-        },
-        {
-          index: "b",
-          content: "b2",
-          content_cn: "B2_cn",
-        },
-        {
-          index: "c",
-          content: "c2",
-        },
-        {
-          index: "d",
-          content: "d2",
-        },
-        {
-          index: "e",
-          content: "",
-        },
-      ],
-    },
-    {
-      id: 3,
-      type: 1,
-      question: "第3题",
-      en_zn: false, //false为英文 zn为中文 中英切换
-      answer: "c",
-      answer_or_not: false,
-      answers: [{
-          index: "a",
-          content: "a3",
-          content_cn: "a3_cn",
-        },
-        {
-          index: "b",
-          content: "b3",
-        },
-        {
-          index: "c",
-          content: "c3",
-        },
-        {
-          index: "d",
-          content: "d3",
-        },
-        {
-          index: "e",
-          content: "e3",
-        },
-      ],
-    },
-    {
-      id: 4,
-      type: 2,
-      en_zn: false, //false为英文 zn为中文 中英切换
-      question: "第4题",
-      answer: "ab",
-      answer_or_not: false,
-      answers: [{
-          index: "a",
-          content: "a4",
-        },
-        {
-          index: "b",
-          content: "b4",
-        },
-        {
-          index: "c",
-          content: "c4",
-          content_cn: "c4_cn",
-        },
-        {
-          index: "d",
-          content: "d4",
-          content_cn: "d4_cn",
-        },
-        {
-          index: "e",
-          content: "",
-        },
-      ],
-    },
-    {
-      id: 5,
-      type: 2,
-      question: "第5题",
-      en_zn: false, //false为英文 zn为中文 中英切换
-      answer: "ac",
-      answer_or_not: false,
-      answers: [{
-          index: "a",
-          content: "a5",
-          content_cn: "a5_cn",
-        },
-        {
-          index: "b",
-          content: "b5",
-          content_cn: "b5_cn",
-        },
-        {
-          index: "c",
-          content: "c5",
-          content_cn: "c5_cn",
-        },
-        {
-          index: "d",
-          content: "d5",
-          content_cn: "d5_cn",
-        },
-        {
-          index: "e",
-          content: "e5",
-          content_cn: "e5_cn",
-        },
-      ],
-    },
-    {
-      id: 6,
-      type: 2,
-      question: "第6题",
-      en_zn: false, //false为英文 zn为中文 中英切换
-      answer: "cde",
-      answer_or_not: false,
-      answers: [{
-          index: "a",
-          content: "a6",
-        },
-        {
-          index: "b",
-          content: "b6",
-        },
-        {
-          index: "c",
-          content: "c6",
-        },
-        {
-          index: "d",
-          content: "d6",
-        },
-        {
-          index: "e",
-          content: "e6",
-        },
-      ],
-    },
-  ],
+    body: [],
 
   },
 
@@ -603,31 +350,39 @@ clearAll(){
 },
 
 // getData:function () {}的简写，向服务器获取题库源数据
-// getData(){
-// let that=this
-//   wx.request({
-//     url: 'http://abc.lycaicai.top:5000', //仅为示例，并非真实的接口地址
-//     data: {
-//       x: '',
-//       y: ''
-//     },
-//     header: {
-//       'content-type': 'application/json' // 默认值
-//     },
-//     success (res) {
-    
-//       // console.log(this.data)
-//     }
-//   })
-  
+getData(){
+  console.log("---")
+  console.log(this.data.body)
+  console.log(this.data)
+  console.log("---")
+let that=this
+  wx.request({
+    url: 'http://abc.lycaicai.top:5000', //仅为示例，并非真实的接口地址
+    header: {
+      'content-type': 'application/json' // 默认值
+    },
+    success (res) {
+      // console.log(res.data)
+      that.setData({
+        body:res.data
+      })
+      
+    }
+  })
+  console.log("+++++")
+  console.log(this.data)
+  console.log("+++++")
+},
 
-// },
+
+
+
 
 adapt_screen(){
   
 //微信自带swiper调整为竖向模式的相关函数
 var data = this.data;
-console.log(data);
+// console.log(data);
 var that = this;
 wx.getSystemInfo({
   success: function (res) {
@@ -642,7 +397,7 @@ wx.getSystemInfo({
    */
   onLoad: function () {
     this.adapt_screen()
-    // this.getData()
+    this.getData()
    
    
   },
