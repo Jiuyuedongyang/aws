@@ -147,6 +147,10 @@ Page({
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
         .index == this.data.body[this.data.outterIndex].answer
       ) {
+        wx.showToast({  
+          title: '回答正确',  
+          icon: 'success',  
+          duration: 1500  })
 
         if (this.data.body[this.data.currentTab].answer_or_not == false) {
           let count_right = this.data.count_right
@@ -166,6 +170,10 @@ Page({
           flag: 0, //否则置0
         });
         // console.log("单选题回答错误");
+        wx.showToast({  
+          title: '回答错误',  
+          icon: 'loading',  
+          duration: 1500  })
       }
     } else if (this.data.body[this.data.outterIndex].type == 2) {
       //如果是多选
@@ -201,6 +209,10 @@ Page({
       answer = answer.sort().join(""); //.sort()排序
 
       if (answerAll == answer) {
+        wx.showToast({  
+          title: '回答正确',  
+          icon: 'success',  
+          duration: 1500  })
         if (this.data.body[this.data.currentTab].answer_or_not == false) {
           let count_right = this.data.count_right
           count_right++
@@ -214,6 +226,10 @@ Page({
 
 
       } else {
+        wx.showToast({  
+          title: '回答错误',  
+          icon: 'loading',  
+          duration: 1500  })
         this.setData({
           flag: 0,
         });
