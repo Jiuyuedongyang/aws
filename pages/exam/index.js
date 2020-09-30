@@ -37,6 +37,7 @@ Page({
     count_sum: 0, //已答总数
     right_rate: 0, //正确率
 
+
     /** 
     body为题目主体 
     */
@@ -119,8 +120,8 @@ Page({
   //we-swiper的touchmove滑动事件函数
   //滑动时，将 答案标志位 置100，100表示html答案选项的标签消失
   touchmove(e) {
-    console.log(e)
-    console.log("moving... github的");
+    // console.log(e)
+    // console.log("moving... github的");
     this.setData({
       flag: 100
     });
@@ -147,10 +148,11 @@ Page({
         this.data.body[this.data.outterIndex].answers[this.data.innerIndex]
         .index == this.data.body[this.data.outterIndex].answer
       ) {
-        wx.showToast({  
-          title: '回答正确',  
-          icon: 'success',  
-          duration: 1500  })
+        wx.showToast({
+          title: '回答正确',
+          icon: 'success',
+          duration: 1500
+        })
 
         if (this.data.body[this.data.currentTab].answer_or_not == false) {
           let count_right = this.data.count_right
@@ -170,10 +172,11 @@ Page({
           flag: 0, //否则置0
         });
         // console.log("单选题回答错误");
-        wx.showToast({  
-          title: '回答错误',  
-          icon: 'loading',  
-          duration: 1500  })
+        wx.showToast({
+          title: '回答错误',
+          icon: 'loading',
+          duration: 1500
+        })
       }
     } else if (this.data.body[this.data.outterIndex].type == 2) {
       //如果是多选
@@ -209,10 +212,11 @@ Page({
       answer = answer.sort().join(""); //.sort()排序
 
       if (answerAll == answer) {
-        wx.showToast({  
-          title: '回答正确',  
-          icon: 'success',  
-          duration: 1500  })
+        wx.showToast({
+          title: '回答正确',
+          icon: 'success',
+          duration: 1500
+        })
         if (this.data.body[this.data.currentTab].answer_or_not == false) {
           let count_right = this.data.count_right
           count_right++
@@ -226,10 +230,11 @@ Page({
 
 
       } else {
-        wx.showToast({  
-          title: '回答错误',  
-          icon: 'loading',  
-          duration: 1500  })
+        wx.showToast({
+          title: '回答错误',
+          icon: 'loading',
+          duration: 1500
+        })
         this.setData({
           flag: 0,
         });
@@ -351,71 +356,87 @@ Page({
     });
     // console.log("aa");
   },
-clearAll(){
-  this.setData({
-    input_page: 1, //用户跳转页面默认为1
-    outterIndex: 0, //题号索引 外索引
-    innerIndex: 0, //选项索引 内索引
-    flag: 100, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
-    currentTab: 0, //当前swiper的页数
-    answerAll: [], //多选题数组
-    count_right: 0, //已答题正确数
-    count_sum: 0, //已答总数
-    right_rate: 0, //正确率
-  })
-},
+  clearAll() {
+    this.setData({
+      input_page: 1, //用户跳转页面默认为1
+      outterIndex: 0, //题号索引 外索引
+      innerIndex: 0, //选项索引 内索引
+      flag: 100, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+      currentTab: 0, //当前swiper的页数
+      answerAll: [], //多选题数组
+      count_right: 0, //已答题正确数
+      count_sum: 0, //已答总数
+      right_rate: 0, //正确率
+    })
+  },
 
-// getData:function () {}的简写，向服务器获取题库源数据
-getData(){
-  console.log("---")
-  console.log(this.data.body)
-  console.log(this.data)
-  console.log("---")
-let that=this
-  wx.request({
-    url: 'https://aws.lycaicai.top:5000', //仅为示例，并非真实的接口地址
-    header: {
-      'content-type': 'application/json' // 默认值
-    },
-    success (res) {
-      // console.log(res.data)
-      that.setData({
-        body:res.data
-      })
-      
-    }
-  })
-  console.log("+++++")
-  console.log(this.data)
-  console.log("+++++")
-},
+  // getData:function () {}的简写，向服务器获取题库源数据
+  getData() {
+    console.log("---")
+    console.log(this.data.body)
+    console.log(this.data)
+    console.log("---")
+    let that = this
+    wx.request({
+      url: 'https://aws.lycaicai.top:5000', //仅为示例，并非真实的接口地址
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success(res) {
+        // console.log(res.data)
+        that.setData({
+          body: res.data
+        })
+
+      }
+    })
+    console.log("+++++")
+    console.log(this.data)
+    console.log("+++++")
+  },
+
+  handleCollection() {
+    console.log(this.data.body[this.data.currentTab].isCollected)
+    let isCollected = !this.data.body[this.data.currentTab].isCollected
+    console.log(isCollected)
+    let str = "body[" + this.data.currentTab + "].isCollected";
+    this.setData({
+      [str]: isCollected,
+    });
+    
+
+
+    //提示用户
+    wx.showToast({
+      title: isCollected ? '收藏成功' : '取消收藏',
+      icon: 'success'
+    })
+  },
 
 
 
+  adapt_screen() {
 
-
-adapt_screen(){
-  
-//微信自带swiper调整为竖向模式的相关函数
-var data = this.data;
-// console.log(data);
-var that = this;
-wx.getSystemInfo({
-  success: function (res) {
-    that.setData({
-      clientHeight: res.windowHeight,
+    //微信自带swiper调整为竖向模式的相关函数
+    var data = this.data;
+    // console.log(data);
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          clientHeight: res.windowHeight,
+        });
+      },
     });
   },
-});
-},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
     this.adapt_screen()
     this.getData()
-   
-   
+
+
   },
 
 

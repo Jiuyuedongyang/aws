@@ -68,7 +68,8 @@
     </view>
     <view class="footbar_container_b">
       <view bindtap="clearAll">重置</view>
-      <view>收藏</view>
+      <view wx:if="{{!body[currentTab].isCollected}}" bindtap="handleCollection">收藏</view>
+      <view wx:if="{{body[currentTab].isCollected}}" bindtap="handleCollection">已收藏</view>
       <view bindtap="toggle">中/英</view>
       <view>正确率:{{count_right}}/{{count_sum}}={{right_rate}}%</view>
     </view>
