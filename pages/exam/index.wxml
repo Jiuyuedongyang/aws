@@ -19,6 +19,18 @@
               <view class="questions" data-outidx="{{outterIndex}}" data-idx="{{innerIndex}}">{{outterItem.id}}.
                 {{outterItem.question}}</view>
 
+
+<!-- 确认答案 -->
+              <!-- 确认答案的结果当flag==1或者0说明有答案，无论对错 0为错 1为对-->
+              <view class="questions" wx:if="{{((flag==0)||(flag==1))}}">
+                <view>参考答案:{{body[outterIndex].answer}}</view>
+                <view wx:if="{{flag==1}}">恭喜你答对了！继续保持！</view>
+                <view wx:else>答错了，请总结经验再接再厉!</view>
+              </view>
+
+
+
+
               <!-- 选项 -->
               <!-- 这里加了wx:if是用来判断是否是多选题 -->
               <!-- 定义wx:for-item="innerItem"以区分外层outterItem -->
@@ -34,13 +46,6 @@
                 <view wx:if="{{outterItem.en_zn}}">{{innerItem.content_cn}}</view>
               </view>
 
-              <!-- 确认答案 -->
-              <!-- 确认答案的结果当flag==1或者0说明有答案，无论对错 0为错 1为对-->
-              <view class="questions" wx:if="{{((flag==0)||(flag==1))}}">
-                <view>参考答案:{{body[outterIndex].answer}}</view>
-                <view wx:if="{{flag==1}}">恭喜你答对了！继续保持！</view>
-                <view wx:else>答错了，请总结经验再接再厉!</view>
-              </view>
 
             </view>
           
