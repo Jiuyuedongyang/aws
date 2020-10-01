@@ -357,16 +357,19 @@ Page({
     // console.log("aa");
   },
   clearAll() {
+    let cleraAll=wx.getStorageSync('saa')
+    console.log(cleraAll)
     this.setData({
-      input_page: 1, //用户跳转页面默认为1
-      outterIndex: 0, //题号索引 外索引
-      innerIndex: 0, //选项索引 内索引
-      flag: 100, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
-      currentTab: 0, //当前swiper的页数
-      answerAll: [], //多选题数组
-      count_right: 0, //已答题正确数
-      count_sum: 0, //已答总数
-      right_rate: 0, //正确率
+      input_page: cleraAll.input_page, //用cl户跳转页面默认为1
+      outterIndex: cleraAll.outterIndex, //题号索引 外索引
+      innerIndex: cleraAll.innerIndex, //选项索引 内索引
+      flag: cleraAll.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+      currentTab: cleraAll.currentTab, //当前swiper的页数
+      answerAll: cleraAll.answerAll, //多选题数组
+      count_right: cleraAll.count_right, //已答题正确数
+      count_sum: cleraAll.count_sum, //已答总数
+      right_rate: cleraAll.right_rate, //正确率
+      body:cleraAll.body
     })
   },
 
@@ -436,18 +439,29 @@ Page({
     this.adapt_screen()
     // var that=this
 
-    wx.getStorage({
-      key: 'saa_body',
-      success: (res) => {
-        console.log("saa_body_ok")
-        console.log(res.data)
-        this.setData({
-          body:res.data
-        })
-        console.log(this.data)
-      }
+    let saa_body=wx.getStorageSync(
+      'saa_body',
+    )
+
+    console.log(saa_body)
+    // success: (res) => {
+    //   console.log("saa_body_ok")
+    //   console.log(res.data)
+      
+    // }
+    this.setData({
+      body:saa_body
     })
-  },
+    //此时本页面中的所有信息
+    console.log("此时本页面中的所有信息")
+    console.log(this.data)
+    console.log("此时本页面中的所有信息")
+
+    //设置saa
+    wx.setStorageSync('saa', this.data)
+
+  }
+  ,
 
 
   /**

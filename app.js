@@ -20,7 +20,7 @@ App({
         console.log(res)
         that.globalData.body_saa = res
         //将saa的主数据放入storage中
-wx.setStorageSync('saa_body', res.data)
+        wx.setStorageSync('saa_body', res.data)
       }
     })
     console.log("+++++")
@@ -31,7 +31,7 @@ wx.setStorageSync('saa_body', res.data)
 
 
 
- 
+
   onLaunch: function () {
 
     // 展示本地存储能力
