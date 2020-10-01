@@ -21,7 +21,7 @@ const option = {
   },
 };
 
-
+var app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -371,29 +371,29 @@ Page({
   },
 
   // getData:function () {}的简写，向服务器获取题库源数据
-  getData() {
-    console.log("---")
-    console.log(this.data.body)
-    console.log(this.data)
-    console.log("---")
-    let that = this
-    wx.request({
-      url: 'https://aws.lycaicai.top:5000', //仅为示例，并非真实的接口地址
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        // console.log(res.data)
-        that.setData({
-          body: res.data
-        })
+  // getData() {
+  //   console.log("---")
+  //   console.log(this.data.body)
+  //   console.log(this.data)
+  //   console.log("---")
+  //   let that = this
+  //   wx.request({
+  //     url: 'https://aws.lycaicai.top:5000', //仅为示例，并非真实的接口地址
+  //     header: {
+  //       'content-type': 'application/json' // 默认值
+  //     },
+  //     success(res) {
+  //       // console.log(res.data)
+  //       that.setData({
+  //         body: res.data
+  //       })
 
-      }
-    })
-    console.log("+++++")
-    console.log(this.data)
-    console.log("+++++")
-  },
+  //     }
+  //   })
+  //   console.log("+++++")
+  //   console.log(this.data)
+  //   console.log("+++++")
+  // },
 
   handleCollection() {
     console.log(this.data.body[this.data.currentTab].isCollected)
@@ -403,7 +403,7 @@ Page({
     this.setData({
       [str]: isCollected,
     });
-    
+
 
 
     //提示用户
@@ -434,9 +434,19 @@ Page({
    */
   onLoad: function () {
     this.adapt_screen()
-    this.getData()
+    // var that=this
 
-
+    wx.getStorage({
+      key: 'saa_body',
+      success: (res) => {
+        console.log("saa_body_ok")
+        console.log(res.data)
+        this.setData({
+          body:res.data
+        })
+        console.log(this.data)
+      }
+    })
   },
 
 
