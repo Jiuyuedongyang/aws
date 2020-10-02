@@ -249,6 +249,8 @@ Page({
       for (let item of this.data.body[this.data.outterIndex].answers) {
         item.selected = false;
       }
+
+
     }
 
 
@@ -279,6 +281,7 @@ Page({
       right_rate
     })
     console.log(right_rate)
+
   },
 
   //页面滑动时清除item.selectd选项，让用户在回来做这题的时候所有选项清零
@@ -357,7 +360,7 @@ Page({
     // console.log("aa");
   },
   clearAll() {
-    let cleraAll=wx.getStorageSync('saa')
+    let cleraAll = wx.getStorageSync('saa')
     console.log(cleraAll)
     this.setData({
       input_page: cleraAll.input_page, //用cl户跳转页面默认为1
@@ -369,7 +372,7 @@ Page({
       count_right: cleraAll.count_right, //已答题正确数
       count_sum: cleraAll.count_sum, //已答总数
       right_rate: cleraAll.right_rate, //正确率
-      body:cleraAll.body
+      body: cleraAll.body
     })
   },
 
@@ -414,6 +417,9 @@ Page({
       title: isCollected ? '收藏成功' : '取消收藏',
       icon: 'success'
     })
+    console.log("123---321")
+    console.log(this.data)
+    console.log("123---321")
   },
 
 
@@ -432,14 +438,9 @@ Page({
       },
     });
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function () {
-    this.adapt_screen()
-    // var that=this
 
-    let saa_body=wx.getStorageSync(
+  setsaa() {
+    let saa_body = wx.getStorageSync(
       'saa_body',
     )
 
@@ -447,21 +448,65 @@ Page({
     // success: (res) => {
     //   console.log("saa_body_ok")
     //   console.log(res.data)
-      
+
     // }
     this.setData({
-      body:saa_body
+      body: saa_body
     })
     //此时本页面中的所有信息
-    console.log("此时本页面中的所有信息")
+    console.log("此=======")
     console.log(this.data)
-    console.log("此时本页面中的所有信息")
+    console.log("此=======")
 
     //设置saa
     wx.setStorageSync('saa', this.data)
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
 
-  }
-  ,
+
+  getsaa_current() {
+    let saa_current = wx.getStorageSync('saa_current')
+    console.log("saa_current get")
+    console.log(saa_current)
+
+    if (saa_current) {
+      this.setData({
+        
+        
+
+
+        input_page: saa_current.input_page, //用cl户跳转页面默认为1
+      outterIndex: saa_current.outterIndex, //题号索引 外索引
+      innerIndex: saa_current.innerIndex, //选项索引 内索引
+      flag: saa_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+      currentTab: saa_current.currentTab, //当前swiper的页数
+      answerAll: saa_current.answerAll, //多选题数组
+      count_right: saa_current.count_right, //已答题正确数
+      count_sum: saa_current.count_sum, //已答总数
+      right_rate: saa_current.right_rate, //正确率
+      body: saa_current.body
+
+
+      })
+      console.log(this.data)
+    }
+    console.log(this.data)
+  },
+
+
+
+
+  onLoad: function () {
+    this.adapt_screen()
+    this.setsaa()
+    
+
+
+
+
+  },
 
 
   /**
@@ -474,18 +519,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getsaa_current()
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {},
+  onHide: function () {
+
+
+  },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {},
+  onUnload: function () {
+    console.log("onunload")
+    wx.setStorageSync('saa_current', this.data)
+console.log(this.data)
+console.log("onunload")
+  },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
