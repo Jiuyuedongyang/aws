@@ -4,7 +4,7 @@ page {
 }
 .a{
   /* width: 750rpx; */
-  height: 300rpx;
+  height: 260rpx;
   /* background-color: greenyellow; */
   border-radius: 15rpx;
   margin: 20rpx;
@@ -63,7 +63,9 @@ page {
   background-color: #D9EFFA;
   /* border: black solid 3rpx; */
 }
-
+.row_1_right{
+  margin-left: 30rpx;
+}
 .iamge {
   width: 100rpx;
   height: 100rpx;
