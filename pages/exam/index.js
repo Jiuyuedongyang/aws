@@ -174,7 +174,7 @@ Page({
         // console.log("单选题回答错误");
         wx.showToast({
           title: '回答错误',
-          icon: 'loading',
+          icon: 'none',
           duration: 1500
         })
       }
@@ -232,7 +232,7 @@ Page({
       } else {
         wx.showToast({
           title: '回答错误',
-          icon: 'loading',
+          icon: 'none',
           duration: 1500
         })
         this.setData({
