@@ -6,10 +6,11 @@ page {
 
 .user_info {
   display: flex;
-  background-color: chartreuse;
+  background-color: #D9EFFA;
   align-items: center;
   padding: 3% 3%;
-  border: black solid 10rpx;
+  margin: 20rpx;
+  /* border: black solid 10rpx; */
   border-radius: 15rpx;
   /* justify-content: space-around; */
   /* flex-direction: column; */
@@ -53,11 +54,6 @@ page {
   opacity: 0.6;
 }
 
-.text{
-  
-  /* position: absolute; */
-
-}
 
 
 
@@ -69,9 +65,10 @@ page {
 .exam_info {
   /* font-size: small; */
   display: flex;
-  background-color: aqua;
+  background-color: #D9EFFA;
   padding: 3% 3%;
-  border: black solid 10rpx;
+  margin: 20rpx;
+  /* border: black solid 10rpx; */
   border-radius: 15rpx;
   justify-content: space-around;
 }

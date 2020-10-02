@@ -8,7 +8,7 @@ page {
   background-color: chartreuse;
   align-items: center;
   padding: 3% 3%;
-  border: black solid 10rpx;
+  /* border: black solid 10rpx; */
   border-radius: 15rpx;
   /* justify-content: space-around; */
   /* flex-direction: column; */
@@ -94,8 +94,8 @@ page {
 .subject {
 
   display: flex;
-  background-color: wheat;
-  border: black solid 10rpx;
+  /* background-color: wheat; */
+  /* border: black solid 10rpx; */
   border-radius: 15rpx;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@ page {
   display: flex;
   width: 100%;
   margin: 10rpx;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   justify-content: space-around;
   flex-wrap: wrap;
 
@@ -116,31 +116,15 @@ page {
   display: flex;
   width: 100%;
   margin: 10rpx;
-  padding: 10rpx;
+  padding: 20rpx;
   border-radius: 15rpx;
-  background-color: darkorange;
-  border: black solid 3rpx;
+  background-color: #D9EFFA;
+  /* border: black solid 3rpx; */
 }
 
-.iamge_1 {
+.iamge {
   width: 100rpx;
   height: 100rpx;
+  border-radius: 10rpx;
 }
 
-
-.iamge_2 {
-  width: 100rpx;
-  height: 100rpx;
-}
-
-
-
-.iamge_3 {
-  width: 100rpx;
-  height: 100rpx;
-}
-
-.iamge_4 {
-  width: 100rpx;
-  height: 100rpx;
-}
