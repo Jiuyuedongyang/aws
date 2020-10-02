@@ -1,13 +1,27 @@
+.master{
+  background-color: #ffffff;
+}
+
+
+
 .answers, .questions{
-background-color: darkgrey;
+/* background-color: darkgrey; */
 padding: 20rpx;
 margin: 20rpx;
-border: black solid 2rpx;
+/* border: black solid 2rpx; */
 border-radius: 15rpx;
 }
 .questions{
-  background-color: wheat;
+  background-color: #D9EFFA;
 }
+
+
+
+.innerItem {
+  margin-top: 10rpx;
+  background-color: #F4F9FC;
+}
+ 
 
 .placeholder{
   height: 5rem;
@@ -21,7 +35,7 @@ border-radius: 15rpx;
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: tomato;
+  background-color: #99CCFF;
 }
 .footbar_container{
   height: 100%;
@@ -76,12 +90,8 @@ swiper-item {
 
 
 
-.innerItem {
-  margin-top: 10rpx;
-  background-color: turquoise;
-}
- 
 .active {
-  color: red;
+  /* color: #ffffff; */
+  background-color: #D9EFFA;
 }
  

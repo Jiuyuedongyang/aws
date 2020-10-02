@@ -1,5 +1,5 @@
 <!-- pages/exam/index.wxml -->
-<view>
+<view class="master">
   <!-- 微信自带swiper滑动模块 -->
   <swiper style="height: {{clientHeight?clientHeight+'px':'auto'}}" current="{{currentTab}}" duration="500"
     bindchange="swiperchange" current="{{currentTab}}">
