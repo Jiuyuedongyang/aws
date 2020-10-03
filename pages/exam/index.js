@@ -360,20 +360,33 @@ Page({
     // console.log("aa");
   },
   clearAll() {
-    let cleraAll = wx.getStorageSync('saa')
-    console.log(cleraAll)
-    this.setData({
-      input_page: cleraAll.input_page, //用cl户跳转页面默认为1
-      outterIndex: cleraAll.outterIndex, //题号索引 外索引
-      innerIndex: cleraAll.innerIndex, //选项索引 内索引
-      flag: cleraAll.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
-      currentTab: cleraAll.currentTab, //当前swiper的页数
-      answerAll: cleraAll.answerAll, //多选题数组
-      count_right: cleraAll.count_right, //已答题正确数
-      count_sum: cleraAll.count_sum, //已答总数
-      right_rate: cleraAll.right_rate, //正确率
-      body: cleraAll.body
+let that=this
+    wx.showModal({
+      title: '是否重置',
+      content: '该操作不可撤销',
+      success(res) {
+        if (res.confirm) {
+
+          let cleraAll = wx.getStorageSync('saa')
+          console.log(cleraAll)
+          that.setData({
+            input_page: cleraAll.input_page, //用cl户跳转页面默认为1
+            outterIndex: cleraAll.outterIndex, //题号索引 外索引
+            innerIndex: cleraAll.innerIndex, //选项索引 内索引
+            flag: cleraAll.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+            currentTab: cleraAll.currentTab, //当前swiper的页数
+            answerAll: cleraAll.answerAll, //多选题数组
+            count_right: cleraAll.count_right, //已答题正确数
+            count_sum: cleraAll.count_sum, //已答总数
+            right_rate: cleraAll.right_rate, //正确率
+            body: cleraAll.body
+          })
+          console.log('用户点击确定')
+        }
+      }
     })
+
+
   },
 
   // getData:function () {}的简写，向服务器获取题库源数据
@@ -411,12 +424,20 @@ Page({
     });
 
 
-
+//
+    if (isCollected==true){
+      wx.showToast({
+        title:'收藏成功',
+        icon: 'success'
+      })
+    }else{
+      wx.showToast({
+        title:'取消收藏',
+        icon:'none'
+      })
+    }
     //提示用户
-    wx.showToast({
-      title: isCollected ? '收藏成功' : '取消收藏',
-      icon: 'success'
-    })
+    
     console.log("123---321")
     console.log(this.data)
     console.log("123---321")
@@ -473,20 +494,20 @@ Page({
 
     if (saa_current) {
       this.setData({
-        
-        
+
+
 
 
         input_page: saa_current.input_page, //用cl户跳转页面默认为1
-      outterIndex: saa_current.outterIndex, //题号索引 外索引
-      innerIndex: saa_current.innerIndex, //选项索引 内索引
-      flag: saa_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
-      currentTab: saa_current.currentTab, //当前swiper的页数
-      answerAll: saa_current.answerAll, //多选题数组
-      count_right: saa_current.count_right, //已答题正确数
-      count_sum: saa_current.count_sum, //已答总数
-      right_rate: saa_current.right_rate, //正确率
-      body: saa_current.body
+        outterIndex: saa_current.outterIndex, //题号索引 外索引
+        innerIndex: saa_current.innerIndex, //选项索引 内索引
+        flag: saa_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+        currentTab: saa_current.currentTab, //当前swiper的页数
+        answerAll: saa_current.answerAll, //多选题数组
+        count_right: saa_current.count_right, //已答题正确数
+        count_sum: saa_current.count_sum, //已答总数
+        right_rate: saa_current.right_rate, //正确率
+        body: saa_current.body
 
 
       })
@@ -501,7 +522,7 @@ Page({
   onLoad: function () {
     this.adapt_screen()
     this.setsaa()
-    
+
 
 
 
@@ -536,8 +557,8 @@ Page({
   onUnload: function () {
     console.log("onunload")
     wx.setStorageSync('saa_current', this.data)
-console.log(this.data)
-console.log("onunload")
+    console.log(this.data)
+    console.log("onunload")
   },
 
   /**
