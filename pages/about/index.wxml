@@ -20,10 +20,37 @@
   <view>题库总数 400题</view>
 </view>
 
-<view>
-  <view>云</view>
-  <view>备战指南</view>
-  <view>免费资料</view>
-  <view>爱好者微信群</view>
-  <view>关于</view>
+<view class="subject">
+  
+<view class="row">
+  <view class="row_1">
+    <view>云</view>
+    <view class="">></view>
+  </view>
+</view>
+<view class="row">
+  <view class="row_1">
+    <view>备战指南</view>
+    <view class="">></view>
+  </view>
+</view>
+<view class="row">
+  <view class="row_1">
+    <view>免费资料</view>
+    <view class="">></view>
+  </view>
+</view>
+<view class="row">
+  <view class="row_1">
+    <view>爱好者微信群</view>
+    <view class="">></view>
+  </view>
+</view>
+<view class="row">
+  <view class="row_1">
+    <view>关于</view>
+    <view class="">></view>
+  </view>
+</view>
+
 </view>

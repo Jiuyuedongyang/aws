@@ -1,7 +1,7 @@
 <!--pages/about/index.wxml-->
 
 <view class="a">
-  <image class="b" src="../../images/aaa.jpg"></image>
+  <image class="b" src="../../images/saa.png"></image>
 </view>
 
 

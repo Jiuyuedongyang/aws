@@ -72,3 +72,42 @@ page {
   border-radius: 15rpx;
   justify-content: space-around;
 }
+
+
+
+.subject {
+
+  display: flex;
+  /* background-color: wheat; */
+  /* border: black solid 10rpx; */
+  border-radius: 15rpx;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  margin: 10rpx;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* background-color: blueviolet; */
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+
+.row_1 {
+  display: flex;
+  width: 100%;
+  margin: 10rpx;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  background-color: #D9EFFA;
+  justify-content:space-between;
+  /* border: black solid 3rpx; */
+}
+.row_1_right{
+  margin-left: 30rpx;
+}
