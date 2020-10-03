@@ -22,7 +22,8 @@ page {
   flex-direction: column;
   justify-content: center;
   border-radius: 15rpx;
-  background-color: cornflowerblue;
+  /* background-color: cornflowerblue; */
+  display: flex;
 }
 
 .avatar {
@@ -57,10 +58,7 @@ page {
 
 
 
-.user_info_right {
-  display: flex;
-  background-color: cornflowerblue;
-}
+
 
 .exam_info {
   /* font-size: small; */
