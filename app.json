@@ -21,13 +21,25 @@
   "tabBar": {
     "color": "#000000",
     "selectedColor": "#99CCFF",
-    "list": [
-      { "pagePath": "pages/ccp/index", "iconPath":"./images/saa_icon.png","text": "ccp" },
-      { "pagePath": "pages/saa/index","iconPath":"./images/saa_icon.png", "text": "saa" },
-      { "pagePath": "pages/sap/index","iconPath":"./images/saa_icon.png", "text": "sap" },
+    "list": [{
+        "pagePath": "pages/ccp/index",
+        "iconPath": "./images/icon_ccp.png",
+        "selectedIconPath": "./images/icon_ccp_selected.png"
+      },
       {
-        "pagePath": "pages/cloud/index","iconPath":"./images/saa_icon.png",
-        "text": "云"
+        "pagePath": "pages/saa/index",
+        "iconPath": "./images/icon_saa.png",
+        "selectedIconPath": "./images/icon_saa_selected.png"
+      },
+      {
+        "pagePath": "pages/sap/index",
+        "iconPath": "./images/icon_sap.png",
+        "selectedIconPath": "./images/icon_sap_selected.png"
+      },
+      {
+        "pagePath": "pages/cloud/index",
+        "iconPath": "./images/icon_cloud.png",
+        "selectedIconPath": "./images/icon_cloud_selected.png"
       }
     ]
   }
