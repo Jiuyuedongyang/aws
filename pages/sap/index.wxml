@@ -1,2 +1,51 @@
-<!--pages/sap/index.wxml-->
-<text>pages/sap/index.wxml</text>
+<!--pages/about/index.wxml-->
+
+<view class="a">
+  <image class="b" src="../../images/banner_sap.png"></image>
+</view>
+
+
+
+<view>
+  <view wx:if="{{0}}" class="if_vip" bindtap="if_vip">if_vip</view>
+  <view class="subject">
+    <view class="row">
+      <navigator class="row_1" url='/pages/exam/index'>
+        <image src="../../images/a.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>刷题</view>
+          <view>刷题模式，记忆知识点</view>
+        </view>
+      </navigator>
+      <navigator class="row_1" url='/pages/exam_English/index'>
+        <image src="../../images/b.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>背题</view>
+          <view>背题模式，快速记忆</view>
+        </view>
+      </navigator>
+      <!-- <navigator class="row_1" url='/pages/exam_collection/index'>
+        <image src="../../images/c.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>收藏</view>
+          <view>收藏库答题</view>
+        </view>
+      </navigator> -->
+      <navigator class="row_1" url='/pages/exam_simulated/index'>
+        <image src="../../images/d.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>模拟考试</view>
+          <view>模拟练习答题</view>
+        </view>
+      </navigator>
+      <navigator class="row_1" url='/pages/exam_quick/index'>
+        <image src="../../images/1.jpg" class="iamge"></image>
+        <view class="row_1_right">
+          <view>快速强记</view>
+          <view>快速强记答题</view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</view>

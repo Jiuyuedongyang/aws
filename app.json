@@ -3,7 +3,7 @@
     "pages/saa/index",
     "pages/ccp/index",
     "pages/sap/index",
-    "pages/about/index",
+    "pages/cloud/index",
     "pages/exam/index",
     "pages/exam_English/index",
     "pages/exam_collection/index",
@@ -19,13 +19,15 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#99CCFF",
     "list": [
-      { "pagePath": "pages/ccp/index", "text": "a" },
-      { "pagePath": "pages/saa/index", "text": "b" },
-      { "pagePath": "pages/sap/index", "text": "c" },
+      { "pagePath": "pages/ccp/index", "iconPath":"./images/saa_icon.png","text": "ccp" },
+      { "pagePath": "pages/saa/index","iconPath":"./images/saa_icon.png", "text": "saa" },
+      { "pagePath": "pages/sap/index","iconPath":"./images/saa_icon.png", "text": "sap" },
       {
-        "pagePath": "pages/about/index",
-        "text": "我"
+        "pagePath": "pages/cloud/index","iconPath":"./images/saa_icon.png",
+        "text": "云"
       }
     ]
   }

@@ -14,43 +14,45 @@
 </view>
 
 <view class="exam_info">
-  <view>考试代码 a</view>
+  <view>考试代码 SAA-C02</view>
   <view>及格分数 75%</view>
   <view>考试题数 65题</view>
+  <view>考试时长 180分钟</view>
   <view>题库总数 400题</view>
+ 
 </view>
 
 <view class="subject">
   
 <view class="row">
-  <view class="row_1">
+  <navigator class="row_1" url="#">
     <view>云</view>
     <view class="">></view>
-  </view>
+  </navigator>
 </view>
 <view class="row">
-  <view class="row_1">
+  <navigator class="row_1" url="#">
     <view>备战指南</view>
     <view class="">></view>
-  </view>
+  </navigator>
 </view>
-<view class="row">
-  <view class="row_1">
+<view class="row"> 
+  <navigator class="row_1" url="#">
     <view>免费资料</view>
     <view class="">></view>
-  </view>
+  </navigator>
 </view>
 <view class="row">
-  <view class="row_1">
+  <navigator class="row_1" url="#">
     <view>爱好者微信群</view>
     <view class="">></view>
-  </view>
+  </navigator>
 </view>
 <view class="row">
-  <view class="row_1">
+  <navigator class="row_1" url="#">
     <view>关于</view>
     <view class="">></view>
-  </view>
+  </navigator>
 </view>
 
 </view>
