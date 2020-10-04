@@ -101,6 +101,13 @@
           "id": -1,
           "name": "about",
           "pathName": "pages/about/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "cloud",
+          "pathName": "pages/cloud/index",
           "scene": null
         }
       ]

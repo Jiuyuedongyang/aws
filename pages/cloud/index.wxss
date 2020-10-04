@@ -6,7 +6,7 @@ page {
 
 .user_info {
   display: flex;
-  background-color: #D9EFFA;
+  background-color: #F9E5A0;
   align-items: center;
   padding: 3% 3%;
   margin: 20rpx;
@@ -16,6 +16,7 @@ page {
   /* flex-direction: column; */
   /* align-items: center; */
 }
+
 .user_info_right {
   margin-left: 30rpx;
   height: 150rpx;
@@ -29,13 +30,14 @@ page {
 .avatar {
   width: 200rpx;
   height: 200rpx;
-  
+
   border-radius: 15%;
   /* margin: 100rpx 0; */
 
   background-color: white;
 }
-.user_info .avatar_button{
+
+.user_info .avatar_button {
   /* margin-top: 0%;
   width:100%;
   height:100%;
@@ -46,7 +48,7 @@ page {
   left:0;
   opacity: 0.70; */
   position: absolute;
-  text-align:center;
+  text-align: center;
   z-index: 999;
   width: 200rpx;
   height: 200rpx;
@@ -63,14 +65,46 @@ page {
 .exam_info {
   /* font-size: small; */
   display: flex;
-  background-color: #D9EFFA;
+  flex-direction: column;
+  font-size: smaller;
+  background-color: #F9E5A0;
   padding: 3% 3%;
   margin: 20rpx;
   /* border: black solid 10rpx; */
   border-radius: 15rpx;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+
+.a {
+  /* font-size: small; */
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+  background-color: #F9E5A0;
+  padding: 3% 3%;
+  margin: 20rpx;
+  /* border: black solid 10rpx; */
+  border-radius: 15rpx;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
+.b {
+
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.c {
+  padding-top: 15rpx;
+  display: flex;
+  justify-content: center;
+}
 
 
 .subject {
@@ -102,10 +136,11 @@ page {
   margin: 10rpx;
   padding: 20rpx;
   border-radius: 15rpx;
-  background-color: #D9EFFA;
-  justify-content:space-between;
+  background-color: #F9E5A0;
+  justify-content: space-between;
   /* border: black solid 3rpx; */
 }
-.row_1_right{
+
+.row_1_right {
   margin-left: 30rpx;
 }

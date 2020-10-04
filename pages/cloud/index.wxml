@@ -13,13 +13,38 @@
   </view>
 </view>
 
-<view class="exam_info">
-  <view>考试代码 SAA-C02</view>
-  <view>及格分数 75%</view>
-  <view>考试题数 65题</view>
-  <view>考试时长 180分钟</view>
-  <view>题库总数 400题</view>
- 
+<view class="a">
+  <view class="b">
+    <view class="c">考试代码</view>
+    <view class="c">CCP</view>
+    <view class="c">SAA-C02</view>
+    <view class="c">SAP-C01</view>
+  </view>
+  <view class="b">
+    <view class="c">及格分数</view>
+    <view class="c">75%</view>
+    <view class="c">75%</view>
+    <view class="c">75%</view>
+    
+  </view>
+  <view class="b">
+    <view class="c">考试题数</view>
+    <view class="c">65题</view>
+    <view class="c">65题</view>
+    <view class="c">65题</view>
+  </view>
+  <view class="b">
+    <view class="c">考试时长</view>
+    <view class="c">180min</view>
+    <view class="c">180min</view>
+    <view class="c">180min</view>
+  </view>
+  <view class="b">
+    <view class="c">题库数目</view>
+    <view class="c">400题</view>
+    <view class="c">400题</view>
+    <view class="c">400题</view>
+  </view>
 </view>
 
 <view class="subject">

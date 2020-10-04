@@ -60,7 +60,7 @@ page {
   margin: 10rpx;
   padding: 20rpx;
   border-radius: 15rpx;
-  background-color: #D9EFFA;
+  background-color: #eeeeee;
   /* border: black solid 3rpx; */
 }
 .row_1_right{
