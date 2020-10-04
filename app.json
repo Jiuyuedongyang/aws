@@ -13,7 +13,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#99CCFF",
-    "navigationBarTitleText": "aws",
+    "navigationBarTitleText": "AWS云题库",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
