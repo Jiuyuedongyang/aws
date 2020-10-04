@@ -9,7 +9,7 @@ Page({
 
 if_vip(){
   wx.showToast({  
-    title: '请联系wx购买题库',  
+    title: '请联系lyc15859973208购买题库',  
     icon: 'success',  
     duration: 2000  
 })  

@@ -9,10 +9,12 @@ Page({
 
 if_vip(){
   wx.showToast({  
-    title: '请联系wx购买题库',  
-    icon: 'success',  
-    duration: 2000  
+    title: '题库未购买',  
+    icon: 'loading',  
+    duration: 1500,
+    mask:true
 })  
+
 
     console.log("yes")
   }
