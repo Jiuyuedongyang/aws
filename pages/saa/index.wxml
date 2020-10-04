@@ -14,14 +14,14 @@
         <image src="../../images/a.png" class="iamge"></image>
         <view class="row_1_right">
           <view>学习模式</view>
-          <view>金典模式，在答题中学习</view>
+          <view>经典模式，在答题中学习</view>
         </view>
       </navigator>
       <navigator class="row_1" url='/pages/exam_English/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">
           <view>记忆模式</view>
-          <view>快速记忆背题 五年高考 三年模拟</view>
+          <view>快速记忆背题，五年高考，三年模拟</view>
         </view>
       </navigator>
       <!-- <navigator class="row_1" url='/pages/exam_collection/index'>
@@ -51,7 +51,7 @@
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
           <view>神仙模式</view>
-          <view>欲练此功必先自宫</view>
+          <view>欲练此功，必先自宫</view>
         </view>
       </navigator>
       <navigator class="row_1" url='/pages/exam_quick/index'>

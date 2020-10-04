@@ -108,6 +108,13 @@
           "id": -1,
           "name": "cloud",
           "pathName": "pages/cloud/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/sap/index",
+          "pathName": "pages/sap/index",
           "scene": null
         }
       ]

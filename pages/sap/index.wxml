@@ -13,15 +13,15 @@
       <navigator class="row_1" url='/pages/exam/index'>
         <image src="../../images/a.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>刷题</view>
-          <view>刷题模式，记忆知识点</view>
+          <view>学习模式</view>
+          <view>经典模式，在答题中学习</view>
         </view>
       </navigator>
       <navigator class="row_1" url='/pages/exam_English/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>背题</view>
-          <view>背题模式，快速记忆</view>
+          <view>记忆模式</view>
+          <view>快速记忆背题，五年高考，三年模拟</view>
         </view>
       </navigator>
       <!-- <navigator class="row_1" url='/pages/exam_collection/index'>
@@ -31,20 +31,39 @@
           <view>收藏库答题</view>
         </view>
       </navigator> -->
-      <navigator class="row_1" url='/pages/exam_simulated/index'>
+      <!-- <navigator class="row_1" url='/pages/exam_simulated/index'>
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
           <view>模拟考试</view>
           <view>模拟练习答题</view>
         </view>
-      </navigator>
-      <navigator class="row_1" url='/pages/exam_quick/index'>
-        <image src="../../images/1.jpg" class="iamge"></image>
+      </navigator> -->
+      <!-- <navigator class="row_1" url='/pages/exam_quick/index'>
+        <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
           <view>快速强记</view>
           <view>快速强记答题</view>
         </view>
+      </navigator> -->
+
+
+      <navigator class="row_1" url='/pages/exam_quick/index'>
+        <image src="../../images/d.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>神仙模式</view>
+          <view>欲练此功，必先自宫</view>
+        </view>
       </navigator>
+      <navigator class="row_1" url='/pages/exam_quick/index'>
+        <image src="../../images/d.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>禅模式</view>
+          <view>远离电子产品喧嚣，净心学习</view>
+        </view>
+      </navigator>
+
+
+
     </view>
 
   </view>

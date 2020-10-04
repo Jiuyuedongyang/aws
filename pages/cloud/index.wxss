@@ -1,7 +1,7 @@
 /* pages/about/index.wxss */
 page {
   width: 100%;
-  /* background-color: #99CCFF; */
+  background-color: rgb(255, 246, 214);
 }
 
 .user_info {
