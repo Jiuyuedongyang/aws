@@ -53,7 +53,11 @@ Page({
     });
   },
 
-
+  goto_page_user_openid(){
+    wx.navigateTo({
+      url: '../user_openid/index',
+    })
+  },
   
 
 

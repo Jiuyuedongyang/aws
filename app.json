@@ -9,7 +9,7 @@
     "pages/exam_collection/index",
     "pages/exam_simulated/index",
     "pages/exam_quick/index",
-    "pages/userOpenid/index"
+    "pages/user_openid/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

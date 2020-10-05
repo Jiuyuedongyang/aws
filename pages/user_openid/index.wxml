@@ -1,5 +1,4 @@
 <!--pages/test/index.wxml-->
 <text>pages/test/index.wxml</text>
 <button bindtap="getOpenId">获取用户唯一标识openid</button>
-<view>openid:{{openid}}</view>
-<view>session_key:{{session_key}}</view>
+<view>openid：{{openid}}</view>

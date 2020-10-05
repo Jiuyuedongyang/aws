@@ -1,7 +1,6 @@
 <!--pages/about/index.wxml-->
 <view class="user_info">
-  <image class="avatar" src="{{userInfo.avatarUrl}}">
-
+  <image class="avatar" src="{{userInfo.avatarUrl}}" bindlongpress="goto_page_user_openid">
   </image>
   <button class="avatar_button" bindgetuserinfo="handleGetUserInfo" style='display:{{isShow?"block":"none"}}'
     open-type="getUserInfo">
