@@ -8,7 +8,8 @@
     "pages/exam_English/index",
     "pages/exam_collection/index",
     "pages/exam_simulated/index",
-    "pages/exam_quick/index"
+    "pages/exam_quick/index",
+    "pages/userOpenid/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
