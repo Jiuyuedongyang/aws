@@ -26,6 +26,7 @@ Page({
               that.setData({
                 openid:openid
               })
+              wx.setStorageSync('openid',openid)
               
             }
             
