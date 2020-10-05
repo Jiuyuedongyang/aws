@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -115,6 +115,13 @@
           "id": -1,
           "name": "pages/sap/index",
           "pathName": "pages/sap/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/test/index",
+          "pathName": "pages/test/index",
           "scene": null
         }
       ]
