@@ -7,7 +7,7 @@
 
 
 <view>
-  <view wx:if="{{1}}" class="if_vip" bindtap="if_vip">请联系微信号lyc15859973208购买题库</view>
+  <view wx:if="{{0}}" class="if_vip" bindtap="if_vip">请联系微信号lyc15859973208购买题库</view>
   
   <view class="subject">
     <view class="row">
