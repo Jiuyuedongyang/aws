@@ -7,21 +7,16 @@ Page({
     isShow: true,
   },
 
-  handClick() {
-    //点击跳转到指定页面
-    //保留当前页面，跳转到应用内的某个页面。
-    // wx.navigateTo({
-    //   url:'/pages/list/list'
-    // })
-
-    //当定义了tabBar之后，需要由wx.switchTab接管，原来的wx.navigateTo不可用
-    wx.switchTab({
-      url: "/pages/list/list",
-    });
+  
+  handleGetUserInfo(data) {
+    console.log("用户点击了", data);
+    //判断用户点击的是否是允许
+    if (data.detail.rawData) {
+      //用户点击的是允许
+      this.OnloadGetUserInfo();
+    }
   },
-
-  //简写为getUserInfo(){}
-  getUserInfo: function () {
+  OnloadGetUserInfo() {
     //判断用户是否授权
     wx.getSetting({
       success: (data) => {
@@ -34,6 +29,7 @@ Page({
           });
         } else {
           //没有授权
+          console.log("用户不授权")
           this.setData({
             isShow: true,
           });
@@ -57,19 +53,19 @@ Page({
     });
   },
 
+
+  
+
+
+
+
+
+
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
     console.log("页面加载");
-    console.log(this);
-    this.getUserInfo();
+    // console.log(this);
+    this.OnloadGetUserInfo();
   },
 
-  handleGetUserInfo(data) {
-    console.log("用户点击了", data);
-    //判断用户点击的是否是允许
-    if (data.detail.rawData) {
-      //用户点击的是允许
-      this.getUserInfo();
-    }
-  },
 });
