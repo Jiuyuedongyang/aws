@@ -4,7 +4,7 @@
 
 Page({
   data: {
-    test: 'test'
+    test: 'test',
   },
 
 
@@ -18,7 +18,9 @@ Page({
     console.log("题库未购买")
   },
   onShow_if_vip_saa() {
+    
     let that = this
+    
     let openid = wx.getStorageSync('openid')
     console.log("getopenidsync " + openid)
     wx.request({
@@ -32,6 +34,8 @@ Page({
         console.log(res)
         console.log(res.data)
         console.log(res.data.if_vip_saa)
+        console.log(typeof(res.data.if_vip_saa))
+        console.log(res.data.if_vip_saa)
         that.setData({
           if_vip_saa: res.data.if_vip_saa
 
@@ -39,6 +43,9 @@ Page({
         console.log('函数')
         console.log(that.data)
         console.log('函数')
+      }
+      ,fail(res){
+        console.log("if_vip_saa失败")
       }
 
     })
