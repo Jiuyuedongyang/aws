@@ -27,7 +27,6 @@ Page({
                 openid:openid
               })
               wx.setStorageSync('openid',openid)
-              
             }
             
           })
