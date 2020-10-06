@@ -101,7 +101,9 @@ Page({
     //获取用户登录的信息
     wx.getUserInfo({
       success: (data) => {
-        
+        console.log(data.userInfo.nickName)
+        wx.setStorageSync('nickName', data.userInfo.nickName)
+        // console.log(data.rawData)
         this.setData({
           userInfo: data.userInfo,
         });

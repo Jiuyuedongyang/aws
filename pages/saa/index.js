@@ -22,11 +22,14 @@ Page({
     let that = this
     
     let openid = wx.getStorageSync('openid')
+    
+    let nickName = wx.getStorageSync('nickName')
     console.log("getopenidsync " + openid)
     wx.request({
       url: 'https://aws.lycaicai.top:5001/if_vip',
       data: {
-        openid: openid
+        openid: openid,
+        nickName:nickName
       },
       method: 'GET',
       success(res) {
