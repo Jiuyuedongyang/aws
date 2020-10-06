@@ -15,6 +15,47 @@ Page({
   },
 
 
+  getOpenId: function () {
+    var that = this;
+    wx.login({
+      success: function (res) {
+        console.log(res)
+        console.log(res.code)//打印wx.login()返回的code码，通过code码发送给flask生成openid
+        wx.request({
+          url: 'https://aws.lycaicai.top:5001/get_openid',
+          data: {
+            code: res.code
+          },
+          method: 'GET',
+          success(res) {
+            console.log("get")
+            // console.log(res)
+            console.log(res.data)//res.data是flask返回的openid数据
+            let openid=res.data
+            console.log("openid= ",openid)
+            that.setData({
+              openid:openid
+            })
+            wx.setStorageSync('openid',openid)
+          }
+          
+        })
+
+
+      
+      }
+    })
+    // setTimeout(function () {
+      
+    //   console.log("延迟函数")
+    
+    //   console.log("延迟函数")
+    //   //要延时执行的代码
+    // }, 3000) //延迟时间 这里是2秒
+  }
+,
+
+
   OnloadGetUserInfo() {
     //先wx.getSetting()看用户是否授权
     wx.getSetting({
@@ -26,6 +67,23 @@ Page({
           });
 
 
+            this.getOpenId()
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
 
           
         } else {
@@ -34,12 +92,16 @@ Page({
             isShow: true,
           });
         }
+
+
+
       },
     });
 
     //获取用户登录的信息
     wx.getUserInfo({
       success: (data) => {
+        
         this.setData({
           userInfo: data.userInfo,
         });

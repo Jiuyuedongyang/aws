@@ -4,7 +4,8 @@ var OPEN_ID = '' //储存获取到openid
 var SESSION_KEY = '' //储存获取到session_key  
 Page({
     data: {
-    },
+    }
+    ,
     getOpenId: function () {
       var that = this;
       wx.login({
