@@ -5,11 +5,13 @@
     "pages/sap/index",
     "pages/cloud/index",
     "pages/exam/index",
-    "pages/exam_English/index",
+    "pages/exam_superman/index",
     "pages/exam_collection/index",
     "pages/exam_simulated/index",
-    "pages/exam_quick/index",
+    "pages/exam_remember/index",
+    "pages/exam_zen/index",
     "pages/user_openid/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

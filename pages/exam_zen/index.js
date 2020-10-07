@@ -1,4 +1,4 @@
-// pages/exam_quick/index.js
+// pages/exam_zen/index.js
 Page({
 
   /**

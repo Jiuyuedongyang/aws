@@ -1,0 +1,86 @@
+<!-- pages/exam/index.wxml -->
+<view class="master">
+  <!-- 微信自带swiper滑动模块 -->
+  <swiper style="height: {{clientHeight?clientHeight+'px':'auto'}}" current="{{currentTab}}" duration="500"
+    bindchange="swiperchange" current="{{currentTab}}">
+    <!-- 微信自带的滑动模块不够好，应用GitHub上的we-wrapper项目，具体参考https://github.com/we-plugin/we-swiper -->
+    <!-- 这里由于我之前使用scroll-view做了竖向滑动和全屏模式，所以不便更改，就在外层加了个view定义一下class="we-wrapper"起到同样效果甚至更好的效果（we-swiper无当前页currentTab的回调） -->
+    <!-- 竖向模式请参考https://blog.csdn.net/u012054869/article/details/88018966 -->
+    <!-- outterIndex是题目循环，innerIndex是答案选项循环   定义wx:for-item="outterItem" "innerItem"以区分内外层 -->
+    <view class="we-wrapper" bindtouchmove="touchmove">
+      <swiper-item wx:for="{{body}}" wx:for-index="outterIndex" wx:key="outter" wx:for-item="outterItem">
+        <scroll-view scroll-y="{{true}}" style="height:{{clientHeight?clientHeight+'px':'auto'}}" enhanced="true"
+          show-scrollbar="false" enable-back-to-top="true">
+
+          <view class="subject">
+
+            <!-- 题目 -->
+            <view class="questions">
+              <view wx:if="{{outterItem.type==1}}">单选题/第{{outterIndex+1}}题/总400题</view>
+              <view wx:if="{{outterItem.type==2}}">多选题/第{{outterIndex+1}}题/总400题</view>
+             
+            </view>
+
+
+            
+
+
+            <!-- 确认答案 -->
+            <!-- 确认答案的结果当flag==1或者0说明有答案，无论对错 0为错 1为对-->
+            <view class="questions" wx:if="{{((flag==0)||(flag==1))}}">
+              <view>正确答案:{{body[outterIndex].answer}}</view>
+              <view wx:if="{{flag==1}}">恭喜你答对了！继续保持！</view>
+              <view wx:else>答错了，请总结经验再接再厉!</view>
+            </view>
+
+
+
+
+            <!-- 选项 -->
+            <!-- 这里加了wx:if是用来判断是否是多选题 -->
+            <!-- 定义wx:for-item="innerItem"以区分外层outterItem -->
+            <view wx:if="{{body[outterIndex].answers[innerIndex].content}}" wx:for="{{body[outterIndex].answers}}"
+              wx:for-index="innerIndex" wx:key="inner" wx:for-item="innerItem" bindtap="answerSelected"
+              data-outterindex="{{outterIndex}}" data-innerindex="{{innerIndex}}"
+              class="answers innerItem {{innerItem.selected?'active':''}}">
+              <!-- 选项内容 -->
+              <view>{{innerItem.content}}</view>
+              <!-- 为加回车，引入空view标签 误删 -->
+              <view></view>
+              <!-- wx:if判断是否有中英翻译切换 -->
+              <view wx:if="{{outterItem.en_zn}}">{{innerItem.content_cn}}</view>
+            </view>
+
+
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+    </view>
+  </swiper>
+</view>
+
+<!-- 底部固定footbar栏 -->
+<!-- 悬浮占位符 -->
+<view class="placeholder">this is a placeholder</view>
+<view class="footbar">
+  <view class="footbar_container">
+    <view class="footbar_container_a">
+      <!-- input输入框，绑定getInputValue世界和定义输入框最大长度为maxlength="3"类型仅为number -->
+      <input class="footbar_container_a_1" bindinput='getInputValue' maxlength="3" type="number" placeholder="题号" />
+      <view class="footbar_container_a_2" bindtap="goto" hover-class="hover_class">跳转</view>
+      <view class="footbar_container_a_3 submit_btn" bindtap="submit" hover-class="hover_class">提交</view>
+    </view>
+    <view class="footbar_container_b">
+      <view bindtap="clearAll" hover-class="hover_class" class="footbar_container_b_1">重置</view>
+      <view wx:if="{{!body[currentTab].isCollected}}" bindtap="handleCollection" hover-class="hover_class"
+        class="footbar_container_b_2">收藏</view>
+      <view wx:if="{{body[currentTab].isCollected}}" bindtap="handleCollection" hover-class="hover_class"
+        class="footbar_container_b_2">已收藏</view>
+      <view hover-class="hover_class">
+        <view bindtap="toggle" class="footbar_container_b_3">中/英</view>
+      </view>
+      <view class="footbar_container_b_4">正确率:{{count_right}}/{{count_sum}}={{right_rate}}%</view>
+    </view>
+  </view>
+</view>

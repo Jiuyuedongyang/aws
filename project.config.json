@@ -122,6 +122,20 @@
           "id": -1,
           "name": "pages/test/index",
           "pathName": "pages/test/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/exam_superman/index",
+          "pathName": "pages/exam_superman/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/exam_remember/index",
+          "pathName": "pages/exam_remember/index",
           "scene": null
         }
       ]
