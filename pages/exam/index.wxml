@@ -15,9 +15,19 @@
           <view class="subject">
 
             <!-- 题目 -->
-            <view class="questions">第{{outterIndex+1}}题 总400题</view>
-            <view class="questions" data-outidx="{{outterIndex}}" data-idx="{{innerIndex}}">{{outterItem.id}}.
-              {{outterItem.question}}</view>
+            <view class="questions">
+              <view wx:if="{{outterItem.type==1}}">单选题/第{{outterIndex+1}}题/总400题</view>
+              <view wx:if="{{outterItem.type==2}}">多选题/第{{outterIndex+1}}题/总400题</view>
+             
+            </view>
+
+
+            <view class="questions">
+              <view data-outidx="{{outterIndex}}" data-idx="{{innerIndex}}">{{outterItem.id}}.{{outterItem.question}}
+              </view>
+              <!-- wx:if判断是否有中英翻译切换 -->
+              <view wx:if="{{outterItem.en_zn}}">{{outterItem.question_cn}}</view>
+            </view>
 
 
             <!-- 确认答案 -->
@@ -63,13 +73,15 @@
     <view class="footbar_container_a">
       <!-- input输入框，绑定getInputValue世界和定义输入框最大长度为maxlength="3"类型仅为number -->
       <input class="footbar_container_a_1" bindinput='getInputValue' maxlength="3" type="number" placeholder="题号" />
-      <view class="footbar_container_a_2" bindtap="goto"  hover-class="hover_class">跳转</view>
-      <view class="footbar_container_a_3 submit_btn" bindtap="submit"  hover-class="hover_class">提交</view>
+      <view class="footbar_container_a_2" bindtap="goto" hover-class="hover_class">跳转</view>
+      <view class="footbar_container_a_3 submit_btn" bindtap="submit" hover-class="hover_class">提交</view>
     </view>
     <view class="footbar_container_b">
-      <view bindtap="clearAll"  hover-class="hover_class"   class="footbar_container_b_1">重置</view>
-      <view wx:if="{{!body[currentTab].isCollected}}" bindtap="handleCollection"  hover-class="hover_class"       class="footbar_container_b_2">收藏</view>
-      <view wx:if="{{body[currentTab].isCollected}}" bindtap="handleCollection"  hover-class="hover_class"     class="footbar_container_b_2">已收藏</view>
+      <view bindtap="clearAll" hover-class="hover_class" class="footbar_container_b_1">重置</view>
+      <view wx:if="{{!body[currentTab].isCollected}}" bindtap="handleCollection" hover-class="hover_class"
+        class="footbar_container_b_2">收藏</view>
+      <view wx:if="{{body[currentTab].isCollected}}" bindtap="handleCollection" hover-class="hover_class"
+        class="footbar_container_b_2">已收藏</view>
       <view hover-class="hover_class">
         <view bindtap="toggle" class="footbar_container_b_3">中/英</view>
       </view>
