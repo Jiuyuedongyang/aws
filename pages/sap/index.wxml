@@ -7,17 +7,19 @@
 
 
 <view>
-  <view wx:if="{{0}}" class="if_vip" bindtap="if_vip">if_vip</view>
+  <!-- 请注意if_vip_saa除了0和1之外还有第三种非0非1的状态。这是，因为用户没有到cloud长安授权获取openid的时候，onshow已经去request一次，request的结果是一串5xx无效的的字符串，导致if_vip_saa非0也非1 注意-->
+  <view wx:if="{{(if_vip_saa!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号lyc15859973208购买题库</view>
+  
   <view class="subject">
     <view class="row">
       <navigator class="row_1" url='/pages/exam/index'>
         <image src="../../images/a.png" class="iamge"></image>
         <view class="row_1_right">
           <view>学习模式</view>
-          <view>经典模式，在答题中学习</view>
+          <view>经典中英双语模式，在答题中学习</view>
         </view>
       </navigator>
-      <navigator class="row_1" url='/pages/exam_English/index'>
+      <navigator class="row_1" url='/pages/exam_remember/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">
           <view>记忆模式</view>
@@ -47,15 +49,15 @@
       </navigator> -->
 
 
-      <navigator class="row_1" url='/pages/exam_quick/index'>
+      <navigator class="row_1" url='/pages/exam_superman/index'>
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
           <view>神仙模式</view>
           <view>欲练此功，必先自宫</view>
         </view>
       </navigator>
-      <navigator class="row_1" url='/pages/exam_quick/index'>
-        <image src="../../images/d.png" class="iamge"></image>
+      <navigator class="row_1" url='/pages/exam_zen/index'>
+        <image src="../../images/c.png" class="iamge"></image>
         <view class="row_1_right">
           <view>禅模式</view>
           <view>远离电子产品喧嚣，净心学习</view>

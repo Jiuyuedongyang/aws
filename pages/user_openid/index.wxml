@@ -1,4 +1,4 @@
-<!--pages/test/index.wxml-->
-<text>pages/test/index.wxml</text>
-<button bindtap="getOpenId">获取用户唯一标识openid</button>
+
+<button bindtap="getOpenId">获取openid</button>
 <view>openid：{{openid}}</view>
+<view>版本号：1.4.1</view>

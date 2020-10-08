@@ -136,6 +136,13 @@
           "id": -1,
           "name": "pages/exam_remember/index",
           "pathName": "pages/exam_remember/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/ccp/index",
+          "pathName": "pages/ccp/index",
           "scene": null
         }
       ]
