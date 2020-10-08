@@ -26,7 +26,7 @@
               <view data-outidx="{{outterIndex}}" data-idx="{{innerIndex}}">{{outterItem.id}}.{{outterItem.question}}
               </view>
               <!-- wx:if判断是否有中英翻译切换 -->
-              <view wx:if="{{outterItem.en_zn}}">{{outterItem.question_cn}}</view>
+              <view wx:if="{{outterItem.en_cn}}">{{outterItem.question_cn}}</view>
             </view>
 
 
@@ -53,7 +53,7 @@
               <!-- 为加回车，引入空view标签 误删 -->
               <view></view>
               <!-- wx:if判断是否有中英翻译切换 -->
-              <view wx:if="{{outterItem.en_zn}}">{{innerItem.content_cn}}</view>
+              <view wx:if="{{outterItem.en_cn}}">{{innerItem.content_cn}}</view>
             </view>
 
 

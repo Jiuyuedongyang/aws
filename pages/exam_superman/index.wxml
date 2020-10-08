@@ -48,7 +48,7 @@
               <!-- 为加回车，引入空view标签 误删 -->
               <view></view>
               <!-- wx:if判断是否有中英翻译切换 -->
-              <view wx:if="{{outterItem.en_zn}}">{{innerItem.content_cn}}</view>
+              <view wx:if="{{outterItem.en_cn}}">{{innerItem.content_cn}}</view>
             </view>
 
 

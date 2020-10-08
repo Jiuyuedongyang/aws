@@ -344,16 +344,20 @@ Page({
     });
   },
 
-  //翻转 切换中英文en_zn标志位flag函数
+  //翻转 切换中英文en_cn标志位flag函数
   toggle(e) {
     console.log(e)
-    let toggle = this.data.body[this.data.currentTab].en_zn;
+    let toggle = this.data.body[this.data.currentTab].en_cn;
     // console.log(toggle);
-    toggle = !toggle;
+    if(toggle==0){
+      toggle=1
+    }else if(toggle==1){
+      toggle=0
+    }
     // console.log(toggle);
     console.log(this.data.outterIndex, this.data.innerIndex)
     //带变量的写法，具体参考https://www.cnblogs.com/simuhunluo/p/7989461.html
-    let str = "body[" + this.data.currentTab + "].en_zn";
+    let str = "body[" + this.data.currentTab + "].en_cn";
     this.setData({
       [str]: toggle
     });
@@ -416,7 +420,13 @@ let that=this
 
   handleCollection() {
     console.log(this.data.body[this.data.currentTab].isCollected)
-    let isCollected = !this.data.body[this.data.currentTab].isCollected
+    let isCollected = this.data.body[this.data.currentTab].isCollected
+
+    if(isCollected==0){
+      isCollected=1
+    }else if(isCollected==1){
+      isCollected=0
+    }
     console.log(isCollected)
     let str = "body[" + this.data.currentTab + "].isCollected";
     this.setData({
