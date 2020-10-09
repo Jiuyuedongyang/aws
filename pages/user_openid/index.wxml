@@ -2,3 +2,4 @@
 <button bindtap="getOpenId">获取openid</button>
 <view>openid：{{openid}}</view>
 <view>版本号：1.4.3</view>
+<button bindtap="clearstoragesync">清空缓存</button>
