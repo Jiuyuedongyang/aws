@@ -4,12 +4,22 @@
     "pages/ccp/index",
     "pages/sap/index",
     "pages/cloud/index",
-    "pages/exam/index",
-    "pages/exam_superman/index",
-    "pages/exam_collection/index",
-    "pages/exam_simulated/index",
-    "pages/exam_remember/index",
-    "pages/exam_zen/index",
+
+
+    "pages/ccp_exam/index",
+    "pages/ccp_exam_superman/index",
+    "pages/ccp_exam_remember/index",
+    "pages/ccp_exam_zen/index",
+
+
+
+    "pages/saa_exam/index",
+    "pages/saa_exam_superman/index",
+    "pages/saa_exam_remember/index",
+    "pages/saa_exam_zen/index",
+
+
+
     "pages/user_openid/index"
     
   ],
