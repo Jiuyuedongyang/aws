@@ -19,6 +19,11 @@
     "pages/saa_exam_zen/index",
 
 
+    "pages/sap_exam/index",
+    "pages/sap_exam_superman/index",
+    "pages/sap_exam_remember/index",
+    "pages/sap_exam_zen/index",
+
 
     "pages/user_openid/index"
     
