@@ -479,7 +479,7 @@ let that=this
       'ccp_body',
     )
 
-    console.log(ccp_body)
+    // console.log(ccp_body)
     // success: (res) => {
     //   console.log("ccp_body_ok")
     //   console.log(res.data)
@@ -489,9 +489,9 @@ let that=this
       body: ccp_body
     })
     //此时本页面中的所有信息
-    console.log("此=======")
-    console.log(this.data)
-    console.log("此=======")
+    // console.log("此=======")
+    // console.log(this.data)
+    // console.log("此=======")
 
     //设置ccp
     wx.setStorageSync('ccp', this.data)
