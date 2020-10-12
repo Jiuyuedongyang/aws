@@ -1,1 +1,5 @@
-/* pages/exam_zen/index.wxss */
+.a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
