@@ -16,8 +16,8 @@
 
             <!-- 题目 -->
             <view class="questions">
-              <view wx:if="{{outterItem.type==1}}">单选题/第{{outterIndex+1}}题/总400题</view>
-              <view wx:if="{{outterItem.type==2}}">多选题/第{{outterIndex+1}}题/总400题</view>
+              <view wx:if="{{outterItem.type==1}}">单选题/第{{outterIndex+1}}题/总183题</view>
+              <view wx:if="{{outterItem.type==2}}">多选题/第{{outterIndex+1}}题/总183题</view>
              
             </view>
 
