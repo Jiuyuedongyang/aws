@@ -1,5 +1,5 @@
 
 <button bindtap="getOpenId">获取密钥</button>
 <view>密钥：{{openid}}</view>
-<view>版本号：1.4.7</view>
+<view>版本号：1.4.8</view>
 <button bindtap="clearstoragesync">更新题库</button>
