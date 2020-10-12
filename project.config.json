@@ -35,7 +35,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.12.2",
+  "libVersion": "2.13.1",
   "appid": "wxf0500bf05da4ac3f",
   "projectname": "aws",
   "debugOptions": {
