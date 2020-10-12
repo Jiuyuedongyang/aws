@@ -41,10 +41,10 @@
   </view>
 
   <view class="b">
-    <view class="c">题库数目</view>
-    <view class="c">180题</view>
-    <view class="c">407题</view>
-    <view class="c">350题</view>
+    <view class="c">考试费用</view>
+    <view class="c">$100</view>
+    <view class="c">$150</view>
+    <view class="c">$300</view>
   </view>
 </view>
 
