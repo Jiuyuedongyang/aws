@@ -23,7 +23,7 @@ Page({
               let openid = res.data
               console.log("openid= ", openid)
               that.setData({
-                openid: openid
+                openid: openid.substr(0, 10) + "******" + openid.substr(16, 21)
               })
               wx.setStorageSync('openid', openid)
             }
@@ -45,7 +45,7 @@ Page({
     clearstoragesync() {
       wx.clearStorageSync()
       wx.showToast({
-        icon:"success",
+        icon: "success",
         title: '更新成功',
       })
     }
