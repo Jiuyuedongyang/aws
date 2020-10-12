@@ -8,7 +8,7 @@
 
 <view>
   <!-- 请注意if_vip_saa除了0和1之外还有第三种非0非1的状态。这是，因为用户没有到cloud长安授权获取openid的时候，onshow已经去request一次，request的结果是一串5xx无效的的字符串，导致if_vip_saa非0也非1 注意-->
-  <view wx:if="{{(if_vip_saa!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号lyc15859973208购买题库</view>
+  <view wx:if="{{(if_vip_saa!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号aws_superman购买题库</view>
   
   <view class="subject">
     <view class="row">
