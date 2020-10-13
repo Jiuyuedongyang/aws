@@ -349,10 +349,10 @@ Page({
     console.log(e)
     let toggle = this.data.body[this.data.currentTab].en_cn;
     // console.log(toggle);
-    if(toggle==0){
-      toggle=1
-    }else if(toggle==1){
-      toggle=0
+    if (toggle == 0) {
+      toggle = 1
+    } else if (toggle == 1) {
+      toggle = 0
     }
     // console.log(toggle);
     console.log(this.data.outterIndex, this.data.innerIndex)
@@ -364,7 +364,7 @@ Page({
     // console.log("aa");
   },
   clearAll() {
-let that=this
+    let that = this
     wx.showModal({
       title: '是否重置',
       content: '该操作不可撤销',
@@ -422,10 +422,10 @@ let that=this
     console.log(this.data.body[this.data.currentTab].isCollected)
     let isCollected = this.data.body[this.data.currentTab].isCollected
 
-    if(isCollected==0){
-      isCollected=1
-    }else if(isCollected==1){
-      isCollected=0
+    if (isCollected == 0) {
+      isCollected = 1
+    } else if (isCollected == 1) {
+      isCollected = 0
     }
     console.log(isCollected)
     let str = "body[" + this.data.currentTab + "].isCollected";
@@ -434,20 +434,20 @@ let that=this
     });
 
 
-//
-    if (isCollected==true){
+    //
+    if (isCollected == true) {
       wx.showToast({
-        title:'收藏成功',
+        title: '收藏成功',
         icon: 'success'
       })
-    }else{
+    } else {
       wx.showToast({
-        title:'取消收藏',
-        icon:'none'
+        title: '取消收藏',
+        icon: 'none'
       })
     }
     //提示用户
-    
+
     console.log("123---321")
     console.log(this.data)
     console.log("123---321")
@@ -530,70 +530,16 @@ let that=this
 
 
   onLoad: function () {
-    
-  
+
+
     this.adapt_screen()
     this.setsaa()
     wx.showToast({
-      title: '加载中...10',//提示文字
-      duration:1000,//显示时长
-      mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
-      icon:'loading', //图标，支持"success"、"loading"  
-   }),
-   wx.showToast({
-    title: '加载中...9',//提示文字
-    duration:1000,//显示时长
-    mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
-    icon:'loading', //图标，支持"success"、"loading"  
- }),
- wx.showToast({
-  title: '加载中...8',//提示文字
-  duration:1000,//显示时长
-  mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
-  icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...7',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...6',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...5',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...4',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...3',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...2',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-}),
-wx.showToast({
- title: '加载中...111',//提示文字
- duration:1000,//显示时长
- mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
- icon:'loading', //图标，支持"success"、"loading"  
-})
+      title: '加载中...10s', //提示文字
+      duration: 10000, //显示时长
+      mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
+      icon: 'loading', //图标，支持"success"、"loading"  
+    })
 
 
 
