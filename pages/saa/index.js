@@ -26,7 +26,7 @@ Page({
     let nickName = wx.getStorageSync('nickName')
     console.log("getopenidsync " + openid)
     wx.request({
-      url: 'https://aws.lycaicai.top:5001/if_vip',
+      url: 'https://aws.aws-superman.top:5001/if_vip-aws-superman-2020',
       data: {
         openid: openid,
         nickName:nickName
