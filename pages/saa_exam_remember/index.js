@@ -17,15 +17,9 @@ const option = {
     new weSwiper({
       animationViewName: "animationData",
       initialSlide: 0,
-    });
-
-
-    wx.showToast({
-      title: '加载中...8s', //提示文字
-      duration: 8000, //显示时长
-      mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
-      icon: 'loading', //图标，支持"success"、"loading"  
     })
+
+
   },
 };
 
@@ -541,6 +535,13 @@ Page({
     this.adapt_screen()
     this.setsaa()
 
+
+    wx.showToast({
+      title: '加载中...8s', //提示文字
+      duration: 8000, //显示时长
+      mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
+      icon: 'loading', //图标，支持"success"、"loading"  
+    })
 
 
 
