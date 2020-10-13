@@ -20,12 +20,7 @@ const option = {
     });
 
 
-    wx.showToast({
-      title: '加载中...5s', //提示文字
-      duration: 5000, //显示时长
-      mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
-      icon: 'loading', //图标，支持"success"、"loading"  
-    })
+    
   },
 };
 
@@ -543,8 +538,8 @@ let that=this
 
   onLoad: function () {
     wx.showToast({
-      title: '加载中...',//提示文字
-      duration:3000,//显示时长
+      title: '加载中...5s',//提示文字
+      duration:5000,//显示时长
       mask:true,//是否显示透明蒙层，防止触摸穿透，默认：false  
       icon:'loading', //图标，支持"success"、"loading"  
    })
