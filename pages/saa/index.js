@@ -5,6 +5,7 @@
 Page({
   data: {
     test: 'test',
+    showDialog: false
   },
 
 
@@ -53,6 +54,17 @@ Page({
 
     })
   },
+  /**
+  * 控制 pop 的打开关闭
+  * 该方法作用有2:
+  * 1：点击弹窗以外的位置可消失弹窗
+  * 2：用到弹出或者关闭弹窗的业务逻辑时都可调用
+  */
+ toggleDialog() {
+  this.setData({
+   showDialog: !this.data.showDialog
+  });
+ },
   // test222() {
   //   console.log(this.data)
   // },

@@ -5,6 +5,7 @@
 Page({
   data: {
     test: 'test',
+    showDialog: false
   },
 
 
@@ -53,6 +54,12 @@ Page({
 
     })
   },
+
+  toggleDialog() {
+    this.setData({
+     showDialog: !this.data.showDialog
+    });
+   },
   // test222() {
   //   console.log(this.data)
   // },

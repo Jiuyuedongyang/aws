@@ -1,5 +1,10 @@
 <!--pages/exam_zen/index.wxml-->
-<!-- <view class="a">敬请期待</view> -->
-<view class="a">
-  <image  src="../../images/zen.jpg"></image>
+<view class="a">请联系群主</view>
+<view>
+  <image  src="../../images/zen1.jpg" mode="widthFix"></image>
+  <image  src="../../images/zen2.jpg" mode="widthFix"></image>
+  <image  src="../../images/zen3.jpg" mode="widthFix"></image>
+  <image  src="../../images/zen4.jpg" mode="widthFix"></image>
+  <image  src="../../images/zen5.jpg" mode="widthFix"></image>
+  <image  src="../../images/zen6.jpg" mode="widthFix"></image>
 </view>

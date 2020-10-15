@@ -1,6 +1,6 @@
 <!--pages/about/index.wxml-->
 
-<view class="a">
+<view class="a" bindtap="toggleDialog">
   <image class="b" src="../../images/banner_saa.png"></image>
 </view>
 
@@ -9,7 +9,7 @@
 <view>
   <!-- 请注意if_vip_saa除了0和1之外还有第三种非0非1的状态。这是，因为用户没有到cloud长安授权获取openid的时候，onshow已经去request一次，request的结果是一串5xx无效的的字符串，导致if_vip_saa非0也非1 注意-->
   <view wx:if="{{(if_vip_saa!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号aws_superman购买题库</view>
-  
+
   <view class="subject">
     <view class="row">
       <navigator class="row_1" url='/pages/saa_exam/index'>
@@ -68,5 +68,18 @@
 
     </view>
 
+  </view>
+</view>
+
+
+
+
+<view class="dialog {{ showDialog ? 'dialog--show' : 'pop_hidden' }}">
+  <view class="dialog_mask" bindtap="toggleDialog" />
+  <view class="dialog_container">
+    <view>
+      <image class="dialog_image" src="../../images/zen1.jpg">
+      </image>
+    </view>
   </view>
 </view>

@@ -80,3 +80,53 @@ page {
   border-radius: 10rpx;
 }
 
+
+
+
+
+.dialog_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(182, 182, 182, 0.3);
+  display: none;
+}
+
+.dialog_container {
+  position: fixed;
+
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+
+
+  z-index: 12;
+  border-radius: 40rpx;
+  /* 弹窗布局宽 */
+  width: 500rpx;
+  /* 弹窗布局高，与下面弹出距离transform有关 */
+  height: 500rpx;
+
+  background: #ff9393;
+}
+
+.dialog_image {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+
+.dialog--show .dialog_mask {
+  display: block;
+}
+
+/*隐藏*/
+.pop_hidden {
+  display: none;
+}
