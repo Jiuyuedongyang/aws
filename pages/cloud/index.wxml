@@ -75,12 +75,7 @@
     </navigator>
   </view>
 
-  <view class="row">
-    <navigator class="row_1" url="">
-      <view>分享程序</view>
-      <view class="">></view>
-    </navigator>
-  </view>
+ 
 
 
   <view class="row">

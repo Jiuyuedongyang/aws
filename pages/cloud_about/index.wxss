@@ -1,6 +1,6 @@
 .a{
   /* width: 750rpx; */
-  height: 260rpx;
+  height: 240rpx;
   border-radius: 15rpx;
   margin: 20rpx;
   margin-bottom: 0rpx;
