@@ -1,1 +1,14 @@
-aws云题库为广大aws爱好者及考生提供持续的一站式可信赖的云题库服务。在这里你可以和群内各个云计算️爱好者讨论最新云技术，云资讯以及云行业发展。同时欢迎关注微信公众号AWS云神仙，获取最新资讯。
+<view>
+  <view class="a">
+    <image class="a_1" src="../../images/gzh.jpg"></image>
+    <view> aws云题库为广大aws爱好者及考生提供持续的一站式可信赖的云题库服务。在这里你可以和群内各个云计算️爱好者讨论最新云技术，云资讯以及云行业发展。同时欢迎关注微信公众号AWS云神仙，获取最新资讯。
+    </view>
+    <image  class="a_2" src="../../images/mini_program.jpg"></image>
+    <view>截图扫描二维码使用小程序</view>
+
+  </view>
+
+
+
+
+</view>

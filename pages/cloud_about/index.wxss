@@ -1,1 +1,23 @@
-/* pages/cloud_about/index.wxss */
+.a{
+  /* width: 750rpx; */
+  height: 260rpx;
+  border-radius: 15rpx;
+  margin: 20rpx;
+  margin-bottom: 0rpx;
+
+}
+
+
+
+.a_1{
+
+  height: 100%;
+  width: 100%;
+
+}
+
+.a_2{
+  height: 300rpx;
+  width: 300rpx;
+
+}
