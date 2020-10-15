@@ -51,31 +51,31 @@
 <view class="subject">
   
 <view class="row">
-  <navigator class="row_1" url="#">
+  <navigator class="row_1" url="../cloud_cloud/index">
     <view>云</view>
     <view class="">></view>
   </navigator>
 </view>
 <view class="row">
-  <navigator class="row_1" url="#">
+  <navigator class="row_1" url="../cloud_fight/index">
     <view>备战指南</view>
     <view class="">></view>
   </navigator>
 </view>
 <view class="row"> 
-  <navigator class="row_1" url="#">
+  <navigator class="row_1" url="../cloud_files/index">
     <view>免费资料</view>
     <view class="">></view>
   </navigator>
 </view>
 <view class="row">
-  <navigator class="row_1" url="#">
+  <navigator class="row_1" url="../cloud_group/index">
     <view>爱好者微信群</view>
     <view class="">></view>
   </navigator>
 </view>
 <view class="row">
-  <navigator class="row_1" url="#">
+  <navigator class="row_1" url="../cloud_about/index">
     <view>关于</view>
     <view class="">></view>
   </navigator>
