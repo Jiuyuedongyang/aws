@@ -36,6 +36,7 @@ Page({
     count_right: 0, //已答题正确数
     count_sum: 0, //已答总数
     right_rate: 0, //正确率
+    body_length:0,//总题目数
 
 
     /** 
@@ -336,7 +337,7 @@ Page({
 
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
-    if ((input_page<=0)||(input_page>400)) {
+    if ((input_page<0)||(input_page>=this.data.body_length)) {
       wx.showToast({
         title: '题号超出范围',
         icon:"none"
@@ -372,6 +373,8 @@ Page({
     });
     // console.log("aa");
   },
+
+  //重置函数
   clearAll() {
     let that = this
     wx.showModal({
@@ -402,30 +405,6 @@ Page({
 
   },
 
-  // getData:function () {}的简写，向服务器获取题库源数据
-  // getData() {
-  //   console.log("---")
-  //   console.log(this.data.body)
-  //   console.log(this.data)
-  //   console.log("---")
-  //   let that = this
-  //   wx.request({
-  //     url: 'https://aws.aws-superman.top:5001', //仅为示例，并非真实的接口地址
-  //     header: {
-  //       'content-type': 'application/json' // 默认值
-  //     },
-  //     success(res) {
-  //       // console.log(res.data)
-  //       that.setData({
-  //         body: res.data
-  //       })
-
-  //     }
-  //   })
-  //   console.log("+++++")
-  //   console.log(this.data)
-  //   console.log("+++++")
-  // },
 
   handleCollection() {
     console.log(this.data.body[this.data.currentTab].isCollected)
@@ -483,19 +462,22 @@ Page({
     let saa_body = wx.getStorageSync(
       'saa_body',
     )
-
-    console.log(saa_body)
+    let body_length=saa_body.length
+    // console.log(saa_body)
     // success: (res) => {
     //   console.log("saa_body_ok")
     //   console.log(res.data)
 
     // }
+    
     this.setData({
-      body: saa_body
+      body: saa_body,
+      body_length:body_length
     })
     //此时本页面中的所有信息
     console.log("此=======")
     console.log(this.data)
+    console.log("ss"+this.data.body_length)
     console.log("此=======")
 
     //设置saa

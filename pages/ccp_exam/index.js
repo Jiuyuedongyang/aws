@@ -338,13 +338,21 @@ Page({
   goto() {
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
+    if ((input_page<0)||(input_page>=183)) {
+      wx.showToast({
+        title: '题号超出范围',
+        icon:"none"
+      })
+    } else {
+      console.log(input_page);
+      this.setData({
 
-    console.log(input_page);
-    this.setData({
+        flag: 100,
+        currentTab: input_page,
+      });
 
-      flag: 100,
-      currentTab: input_page,
-    });
+
+    }
   },
 
   //翻转 切换中英文en_cn标志位flag函数
