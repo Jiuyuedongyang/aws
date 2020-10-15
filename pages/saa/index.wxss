@@ -91,7 +91,7 @@ page {
   right: 0;
   bottom: 0;
   z-index: 10;
-  background: rgba(182, 182, 182, 0.3);
+  background: rgba(182, 182, 182, 0.3); 
   display: none;
 }
 
@@ -109,16 +109,16 @@ page {
   z-index: 12;
   border-radius: 40rpx;
   /* 弹窗布局宽 */
-  width: 500rpx;
+  width: 700rpx;
   /* 弹窗布局高，与下面弹出距离transform有关 */
-  height: 500rpx;
+  height: 350rpx;
 
-  background: #ff9393;
+  /* background: #ff9393; */
 }
 
 .dialog_image {
-  width: 400rpx;
-  height: 400rpx;
+  width: 700rpx;
+  height: 350rpx;
 }
 
 
