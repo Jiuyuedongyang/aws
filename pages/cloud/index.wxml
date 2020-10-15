@@ -30,9 +30,9 @@
     <view class="c">70%</view>
     <view class="c">72%</view>
     <view class="c">75%</view>
-    
+
   </view>
-  
+
   <view class="b">
     <view class="c">考试时长</view>
     <view class="c">90min</view>
@@ -49,36 +49,46 @@
 </view>
 
 <view class="subject">
+
+  <view class="row">
+    <navigator class="row_1" url="../cloud_cloud/index">
+      <view>云</view>
+      <view class="">></view>
+    </navigator>
+  </view>
+  <view class="row">
+    <navigator class="row_1" url="../cloud_fight/index">
+      <view>备战指南</view>
+      <view class="">></view>
+    </navigator>
+  </view>
+  <view class="row">
+    <navigator class="row_1" url="../cloud_files/index">
+      <view>免费资料</view>
+      <view class="">></view>
+    </navigator>
+  </view>
+  <view class="row">
+    <navigator class="row_1" url="../cloud_group/index">
+      <view>爱好者微信群</view>
+      <view class="">></view>
+    </navigator>
+  </view>
+
+  <view class="row">
+    <navigator class="row_1" url="">
+      <view>分享程序</view>
+      <view class="">></view>
+    </navigator>
+  </view>
+
+
+  <view class="row">
+    <navigator class="row_1" url="../cloud_about/index">
+      <view>关于</view>
+      <view class="">></view>
+    </navigator>
+  </view>
   
-<view class="row">
-  <navigator class="row_1" url="../cloud_cloud/index">
-    <view>云</view>
-    <view class="">></view>
-  </navigator>
-</view>
-<view class="row">
-  <navigator class="row_1" url="../cloud_fight/index">
-    <view>备战指南</view>
-    <view class="">></view>
-  </navigator>
-</view>
-<view class="row"> 
-  <navigator class="row_1" url="../cloud_files/index">
-    <view>免费资料</view>
-    <view class="">></view>
-  </navigator>
-</view>
-<view class="row">
-  <navigator class="row_1" url="../cloud_group/index">
-    <view>爱好者微信群</view>
-    <view class="">></view>
-  </navigator>
-</view>
-<view class="row">
-  <navigator class="row_1" url="../cloud_about/index">
-    <view>关于</view>
-    <view class="">></view>
-  </navigator>
-</view>
 
 </view>

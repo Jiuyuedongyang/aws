@@ -56,6 +56,34 @@ Page({
   // test222() {
   //   console.log(this.data)
   // },
+
+
+
+
+  //分享本页面给朋友
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: 'AWS云题库ccp-c01☁️',
+      path: '/pages/saa/index'
+    }
+
+  },
+  //分享到朋友圈
+  onShareTimeline: function () {
+    return {
+      title: 'AWS云题库',
+      path: 'pages/saa/index',
+    }
+  },
+
+
+
+
+
   onLoad: function (options) {},
 
   onShow: function (options) {

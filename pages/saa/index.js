@@ -19,18 +19,18 @@ Page({
     console.log("题库未购买")
   },
   onShow_if_vip_saa() {
-    
+
     let that = this
-    
+
     let openid = wx.getStorageSync('openid')
-    
+
     let nickName = wx.getStorageSync('nickName')
     console.log("getopenidsync " + openid)
     wx.request({
       url: 'https://aws.aws-superman.top:5001/if_vip-aws-superman-2020',
       data: {
         openid: openid,
-        nickName:nickName
+        nickName: nickName
       },
       method: 'GET',
       success(res) {
@@ -38,7 +38,7 @@ Page({
         console.log(res)
         console.log(res.data)
         console.log(res.data.if_vip_saa)
-        console.log(typeof(res.data.if_vip_saa))
+        console.log(typeof (res.data.if_vip_saa))
         console.log(res.data.if_vip_saa)
         that.setData({
           if_vip_saa: res.data.if_vip_saa
@@ -47,27 +47,54 @@ Page({
         console.log('函数')
         console.log(that.data)
         console.log('函数')
-      }
-      ,fail(res){
+      },
+      fail(res) {
         console.log("if_vip_saa失败")
       }
 
     })
   },
+
+
+
+
+  //分享本页面给朋友
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: 'AWS云题库saa-c01☁️',
+      path: '/pages/saa/index'
+    }
+
+  },
+  //分享到朋友圈
+  onShareTimeline: function () {
+    return {
+      title: 'AWS云题库',
+      path: 'pages/saa/index',
+    }
+  },
+
   /**
-  * 控制 pop 的打开关闭
-  * 该方法作用有2:
-  * 1：点击弹窗以外的位置可消失弹窗
-  * 2：用到弹出或者关闭弹窗的业务逻辑时都可调用
-  */
- toggleDialog() {
-  this.setData({
-   showDialog: !this.data.showDialog
-  });
- },
+   * 控制 pop 的打开关闭
+   * 该方法作用有2:
+   * 1：点击弹窗以外的位置可消失弹窗
+   * 2：用到弹出或者关闭弹窗的业务逻辑时都可调用
+   */
+  toggleDialog() {
+    this.setData({
+      showDialog: !this.data.showDialog
+    });
+  },
   // test222() {
   //   console.log(this.data)
   // },
+
+
+
   onLoad: function (options) {},
 
   onShow: function (options) {

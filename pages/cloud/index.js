@@ -6,10 +6,10 @@ Page({
     isShow: true,
   },
 
-  
+
   handleGetUserInfo(data) {
     //判断用户点击的是否是允许
-    if (data.detail.rawData) {//如果存在信息说明之前已经允许过
+    if (data.detail.rawData) { //如果存在信息说明之前已经允许过
       this.OnloadGetUserInfo();
     }
   },
@@ -20,7 +20,7 @@ Page({
     wx.login({
       success: function (res) {
         console.log(res)
-        console.log(res.code)//打印wx.login()返回的code码，通过code码发送给flask生成openid
+        console.log(res.code) //打印wx.login()返回的code码，通过code码发送给flask生成openid
         wx.request({
           url: 'https://aws.aws-superman.top:5001/get_openid',
           data: {
@@ -30,30 +30,29 @@ Page({
           success(res) {
             console.log("get")
             // console.log(res)
-            console.log(res.data)//res.data是flask返回的openid数据
-            let openid=res.data
-            console.log("openid= ",openid)
+            console.log(res.data) //res.data是flask返回的openid数据
+            let openid = res.data
+            console.log("openid= ", openid)
             that.setData({
-              openid:openid
+              openid: openid
             })
-            wx.setStorageSync('openid',openid)
+            wx.setStorageSync('openid', openid)
           }
-          
+
         })
 
 
-      
+
       }
     })
     // setTimeout(function () {
-      
+
     //   console.log("延迟函数")
-    
+
     //   console.log("延迟函数")
     //   //要延时执行的代码
     // }, 3000) //延迟时间 这里是2秒
-  }
-,
+  },
 
 
   OnloadGetUserInfo() {
@@ -67,15 +66,7 @@ Page({
           });
 
 
-            this.getOpenId()
-
-
-
-
-
-
-
-          
+          this.getOpenId()
 
 
 
@@ -85,7 +76,15 @@ Page({
 
 
 
-          
+
+
+
+
+
+
+
+
+
         } else {
           //没有授权
           this.setData({
@@ -111,14 +110,31 @@ Page({
     });
   },
 
-  goto_page_user_openid(){
+  goto_page_user_openid() {
     wx.navigateTo({
       url: '../user_openid/index',
     })
   },
-  
 
+  //分享本页面给朋友
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: 'AWS云题库saa-c01☁️',
+      path: '/pages/saa/index'
+    }
 
+  },
+  //分享到朋友圈
+  onShareTimeline: function () {
+    return {
+      title: 'AWS云题库',
+      path: 'pages/saa/index',
+    }
+  },
 
 
 
