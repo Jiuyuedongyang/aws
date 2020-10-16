@@ -26,29 +26,6 @@
           <view>快速记忆背题，五年高考，三年模拟</view>
         </view>
       </navigator>
-      <!-- <navigator class="row_1" url='/pages/saa_exam_collection/index'>
-        <image src="../../images/c.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>收藏</view>
-          <view>收藏库答题</view>
-        </view>
-      </navigator> -->
-      <!-- <navigator class="row_1" url='/pages/saa_exam_simulated/index'>
-        <image src="../../images/d.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>模拟考试</view>
-          <view>模拟练习答题</view>
-        </view>
-      </navigator> -->
-      <!-- <navigator class="row_1" url='/pages/saa_exam_quick/index'>
-        <image src="../../images/d.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>快速强记</view>
-          <view>快速强记答题</view>
-        </view>
-      </navigator> -->
-
-
       <navigator class="row_1" url='/pages/saa_exam_superman/index'>
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
