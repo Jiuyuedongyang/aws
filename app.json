@@ -38,9 +38,10 @@
     "navigationBarBackgroundColor": "#99CCFF",
     "navigationBarTitleText": "AWS云题库",
     "navigationBarTextStyle": "black",
-    "pageOrientation": "auto",
-    "resizable": true
+    "pageOrientation": "auto"
+   
   },
+  "resizable": true,
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
