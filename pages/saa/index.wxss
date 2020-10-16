@@ -111,14 +111,14 @@ page {
   /* 弹窗布局宽 */
   width: 700rpx;
   /* 弹窗布局高，与下面弹出距离transform有关 */
-  height: 350rpx;
+  height: 320rpx;
 
   /* background: #ff9393; */
 }
 
 .dialog_image {
   width: 700rpx;
-  height: 350rpx;
+  height: 320rpx;
 }
 
 
