@@ -73,6 +73,11 @@ page {
 }
 .row_1_right{
   margin-left: 30rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  
+  
 }
 .iamge {
   width: 100rpx;
