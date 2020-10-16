@@ -86,6 +86,10 @@ page {
 
 
 
+
+
+
+
 .dialog_mask {
   position: fixed;
   top: 0;
@@ -111,16 +115,15 @@ page {
   z-index: 12;
   border-radius: 40rpx;
   /* 弹窗布局宽 */
-  width: 500rpx;
-  /* 弹窗布局高，与下面弹出距离transform有关 */
-  height: 500rpx;
+  width: 600rpx;
+  height: 800rpx;
 
-  background: #ff9393;
+  /* background: #ff9393; */
 }
 
 .dialog_image {
-  width: 400rpx;
-  height: 400rpx;
+  width: 600rpx;
+  height: 800rpx;
 }
 
 
