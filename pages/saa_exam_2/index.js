@@ -121,8 +121,8 @@ Page({
   //we-swiper的touchmove滑动事件函数
   //滑动时，将 答案标志位 置100，100表示html答案选项的标签消失
   touchmove(e) {
-    // console.log(e)
-    // console.log("moving... github的");
+    console.log(e)
+    console.log("moving... github的");
     this.setData({
       flag: 100
     });
@@ -287,8 +287,8 @@ Page({
 
   //页面滑动时清除item.selectd选项，让用户在回来做这题的时候所有选项清零
   swiperchange(e) {
-    console.log(this.data.currentTab)
-    console.log("changeswiper微信自带exam");
+    // console.log(this.data.currentTab)
+    console.log("changeswiper微信自带");
     // console.log(this.data.innerIndex);
     console.log(e)
     console.log(e.detail.current)
@@ -337,9 +337,9 @@ Page({
 
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
-    if ((input_page<0)||(input_page>=this.data.body_length)) {
+    if ((input_page<100)||(input_page>=200)) {
       wx.showToast({
-        title: '题号超出范围',
+        title: '题号超出范围exam2[100-200]',
         icon:"none"
       })
     } else {
