@@ -76,9 +76,8 @@ page {
   display: flex;
   flex-direction:column;
   justify-content: center;
-  
-  
 }
+
 .iamge {
   width: 100rpx;
   height: 100rpx;
