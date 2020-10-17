@@ -22,7 +22,7 @@
         </view>
       </navigator>
       <navigator class="row_1" url='/pages/ccp_exam_remember/index'>
-        <image src="../../images/b.png" class="iamge"></image>
+        <image src="../../images/c.png" class="iamge"></image>
         <view class="row_1_right">
           <view>记忆模式</view>
           <view>快速记忆背题，五年高考，三年模拟</view>

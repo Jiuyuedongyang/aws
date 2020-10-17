@@ -157,6 +157,28 @@
           "id": -1,
           "name": "pages/saa/index",
           "pathName": "pages/saa/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "quickl",
+          "pathName": "pages/quickl/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 14,
+          "name": "quickkkk",
+          "pathName": "pages/saa/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/saa_exam_quick/index",
+          "pathName": "pages/saa_exam_quick/index",
+          "query": "",
           "scene": null
         }
       ]

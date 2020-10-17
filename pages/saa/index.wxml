@@ -43,13 +43,22 @@
         </view>
       </view>
 
+      <navigator class="box_1" url='/pages/saa_exam_quick/index'>
+        <image src="../../images/b.png" class="iamge"></image>
+        <view class="row_1_right">
+          <view>快速模式</view>
+          <view>根本停不下来</view>
+        </view>
+      </navigator>
+
+
 
 
       <navigator class="box_1" url='/pages/saa_exam_remember/index'>
-        <image src="../../images/b.png" class="iamge"></image>
+        <image src="../../images/c.png" class="iamge"></image>
         <view class="row_1_right">
           <view>记忆模式</view>
-          <view>快速记忆背题，五年高考，三年模拟</view>
+          <view>记忆背题，五年高考，三年模拟</view>
         </view>
       </navigator>
       <navigator class="box_1" url='/pages/saa_exam_superman/index'>
@@ -60,7 +69,7 @@
         </view>
       </navigator>
       <navigator class="box_1" url='/pages/saa_exam_zen/index'>
-        <image src="../../images/c.png" class="iamge"></image>
+        <image src="../../images/e.png" class="iamge"></image>
         <view class="row_1_right">
           <view>禅模式</view>
           <view>一念一清净，一叶一如来</view>

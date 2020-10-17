@@ -14,6 +14,7 @@
 
 
     "pages/saa_exam/index",
+    "pages/saa_exam_quick/index",
     "pages/saa_exam_1/index",
     "pages/saa_exam_2/index",
     "pages/saa_exam_3/index",

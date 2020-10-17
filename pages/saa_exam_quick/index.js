@@ -7,9 +7,9 @@ const option = {
   touchstart(e) {
     this.weswiper.touchstart(e);
   },
-  // touchmove(e) {
-  //   this.weswiper.touchmove(e);
-  // },
+  touchmove(e) {
+    this.weswiper.touchmove(e);
+  },
   touchend(e) {
     this.weswiper.touchend(e);
   },
@@ -18,9 +18,6 @@ const option = {
       animationViewName: "animationData",
       initialSlide: 0,
     });
-
-
-
   },
 };
 
@@ -39,6 +36,7 @@ Page({
     count_right: 0, //已答题正确数
     count_sum: 0, //已答总数
     right_rate: 0, //正确率
+    body_length: 0, //总题目数
 
 
     /** 
@@ -123,19 +121,18 @@ Page({
   //we-swiper的touchmove滑动事件函数
   //滑动时，将 答案标志位 置100，100表示html答案选项的标签消失
   touchmove(e) {
-
     // console.log(e)
     // console.log("moving... github的");
     this.setData({
-      flag: 100,
+      flag: 100
     });
   },
 
 
-  
-
-
-
+  //   onSlideNextStart (e) {
+  //     console.log("onSlideNextStart")
+  // console.log(e)
+  //   },
 
 
   //确认答题按钮函数
@@ -296,8 +293,8 @@ Page({
 
   //页面滑动时清除item.selectd选项，让用户在回来做这题的时候所有选项清零
   swiperchange(e) {
-    // console.log(this.data.currentTab)
-    // console.log("changeswiper微信自带");
+    console.log(this.data.currentTab)
+    console.log("changeswiper微信自带exam");
     // console.log(this.data.innerIndex);
     console.log(e)
     console.log(e.detail.current)
@@ -343,9 +340,10 @@ Page({
 
   //跳转页面函数
   goto() {
+
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
-    if ((input_page < 0) || (input_page >= 183)) {
+    if ((input_page < 0) || (input_page >= this.data.body_length)) {
       wx.showToast({
         title: '题号超出范围',
         icon: "none"
@@ -364,10 +362,6 @@ Page({
 
   //翻转 切换中英文en_cn标志位flag函数
   toggle(e) {
-    wx.showToast({
-      title: '仅saa、sap支持中英双语对照',
-      icon: "none"
-    })
     console.log(e)
     let toggle = this.data.body[this.data.currentTab].en_cn;
     // console.log(toggle);
@@ -385,6 +379,8 @@ Page({
     });
     // console.log("aa");
   },
+
+  //重置函数
   clearAll() {
     let that = this
     wx.showModal({
@@ -393,7 +389,7 @@ Page({
       success(res) {
         if (res.confirm) {
 
-          let cleraAll = wx.getStorageSync('ccp')
+          let cleraAll = wx.getStorageSync('saa')
           console.log(cleraAll)
           that.setData({
             input_page: cleraAll.input_page, //用cl户跳转页面默认为1
@@ -415,30 +411,6 @@ Page({
 
   },
 
-  // getData:function () {}的简写，向服务器获取题库源数据
-  // getData() {
-  //   console.log("---")
-  //   console.log(this.data.body)
-  //   console.log(this.data)
-  //   console.log("---")
-  //   let that = this
-  //   wx.request({
-  //     url: 'https://aws.lycaicai.top:5000', //仅为示例，并非真实的接口地址
-  //     header: {
-  //       'content-type': 'application/json' // 默认值
-  //     },
-  //     success(res) {
-  //       // console.log(res.data)
-  //       that.setData({
-  //         body: res.data
-  //       })
-
-  //     }
-  //   })
-  //   console.log("+++++")
-  //   console.log(this.data)
-  //   console.log("+++++")
-  // },
 
   handleCollection() {
     console.log(this.data.body[this.data.currentTab].isCollected)
@@ -492,54 +464,57 @@ Page({
     });
   },
 
-  setccp() {
-    let ccp_body = wx.getStorageSync(
-      'ccp_body',
+  setsaa() {
+    let saa_body = wx.getStorageSync(
+      'saa_body',
     )
-
-    // console.log(ccp_body)
+    let body_length = saa_body.length
+    // console.log(saa_body)
     // success: (res) => {
-    //   console.log("ccp_body_ok")
+    //   console.log("saa_body_ok")
     //   console.log(res.data)
 
     // }
+
     this.setData({
-      body: ccp_body
+      body: saa_body,
+      body_length: body_length
     })
     //此时本页面中的所有信息
-    // console.log("此=======")
-    // console.log(this.data)
-    // console.log("此=======")
+    console.log("此=======")
+    console.log(this.data)
+    console.log("ss" + this.data.body_length)
+    console.log("此=======")
 
-    //设置ccp
-    wx.setStorageSync('ccp', this.data)
+    //设置saa
+    wx.setStorageSync('saa', this.data)
   },
   /**
    * 生命周期函数--监听页面加载
    */
 
 
-  getccp_current() {
-    let ccp_current = wx.getStorageSync('ccp_current')
-    console.log("ccp_current get")
-    console.log(ccp_current)
+  getsaa_current() {
+    let saa_current = wx.getStorageSync('saa_current')
+    console.log("saa_current get")
+    console.log(saa_current)
 
-    if (ccp_current) {
+    if (saa_current) {
       this.setData({
 
 
 
 
-        input_page: ccp_current.input_page, //用cl户跳转页面默认为1
-        outterIndex: ccp_current.outterIndex, //题号索引 外索引
-        innerIndex: ccp_current.innerIndex, //选项索引 内索引
-        flag: ccp_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
-        currentTab: ccp_current.currentTab, //当前swiper的页数
-        answerAll: ccp_current.answerAll, //多选题数组
-        count_right: ccp_current.count_right, //已答题正确数
-        count_sum: ccp_current.count_sum, //已答总数
-        right_rate: ccp_current.right_rate, //正确率
-        body: ccp_current.body
+        input_page: saa_current.input_page, //用cl户跳转页面默认为1
+        outterIndex: saa_current.outterIndex, //题号索引 外索引
+        innerIndex: saa_current.innerIndex, //选项索引 内索引
+        flag: saa_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+        currentTab: saa_current.currentTab, //当前swiper的页数
+        answerAll: saa_current.answerAll, //多选题数组
+        count_right: saa_current.count_right, //已答题正确数
+        count_sum: saa_current.count_sum, //已答总数
+        right_rate: saa_current.right_rate, //正确率
+        body: saa_current.body
 
 
       })
@@ -547,20 +522,31 @@ Page({
     }
     console.log(this.data)
   },
+  set_next() {
+    this.setData({
+      currentTab: this.data.currentTab + 1
+    })
+  },
+  set_previous() {
+    this.setData({
+      currentTab: this.data.currentTab - 1
+    })
+  },
 
 
 
 
   onLoad: function () {
-    wx.showToast({
-      title: '加载中...5s', //提示文字
-      duration: 5000, //显示时长
-      mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
-      icon: 'loading', //图标，支持"success"、"loading"  
-    })
-    this.adapt_screen()
-    this.setccp()
 
+
+    this.adapt_screen()
+    this.setsaa()
+    // wx.showToast({
+    //   title: '加载中...10s', //提示文字
+    //   duration: 10000, //显示时长
+    //   mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
+    //   icon: 'loading', //图标，支持"success"、"loading"  
+    // })
 
 
 
@@ -578,7 +564,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getccp_current()
+    this.getsaa_current()
   },
 
   /**
@@ -594,7 +580,7 @@ Page({
    */
   onUnload: function () {
     console.log("onunload")
-    wx.setStorageSync('ccp_current', this.data)
+    wx.setStorageSync('saa_current', this.data)
     console.log(this.data)
     console.log("onunload")
   },
