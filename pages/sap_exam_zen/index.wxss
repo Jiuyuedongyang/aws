@@ -1,5 +1,13 @@
-.a{
+.a {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+image {
+  display: flex;
+  width: 800rpx;
+  height: 1200rpx;
+}
+
+

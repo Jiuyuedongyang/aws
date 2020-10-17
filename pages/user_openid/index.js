@@ -23,7 +23,7 @@ Page({
               let openid = res.data
               console.log("openid= ", openid)
               that.setData({
-                openid: openid.substr(0, 10) + "******" + openid.substr(16, 21)
+                openid: openid
               })
               wx.setStorageSync('openid', openid)
             }

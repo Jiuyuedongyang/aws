@@ -17,7 +17,7 @@
         <navigator class="navigator_up" url='/pages/saa_exam/index'>
           <image src="../../images/a.png" class="iamge"></image>
           <view class="row_1_right">
-            <view>学习模式</view>
+            <view>🏠学习模式</view>
             <view>经典中英双语模式，在答题中学习</view>
           </view>
         </navigator>
@@ -26,19 +26,19 @@
         <view class="navigator_down">
           <navigator class="navigator_down_1" url='/pages/saa_exam_1/index'>
             <!-- <image src="../../images/b.png" class="iamge"></image> -->
-              <view>Part Ⅰ</view>
+              <view>💻Part Ⅰ</view>
           </navigator>
           <navigator class="navigator_down_2" url='/pages/saa_exam_2/index'>
             <!-- <image src="../../images/b.png" class="iamge"></image> -->
-              <view>PartⅡ</view>
+              <view>💻PartⅡ</view>
           </navigator>
           <navigator class="navigator_down_3" url='/pages/saa_exam_3/index'>
             <!-- <image src="../../images/b.png" class="iamge"></image> -->
-              <view>Part Ⅲ</view>
+              <view>💻Part Ⅲ</view>
           </navigator>
           <navigator class="navigator_down_4" url='/pages/saa_exam_4/index'>
             <!-- <image src="../../images/b.png" class="iamge"></image> -->
-              <view>Part Ⅳ</view>
+              <view>💻Part Ⅳ</view>
           </navigator>
         </view>
       </view>
@@ -46,8 +46,8 @@
       <navigator class="box_1" url='/pages/saa_exam_quick/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>快速模式</view>
-          <view>根本停不下来</view>
+          <view>✈️快速模式</view>
+          <view>题库持久，久到离谱，根本停不下来</view>
         </view>
       </navigator>
 
@@ -57,21 +57,21 @@
       <navigator class="box_1" url='/pages/saa_exam_remember/index'>
         <image src="../../images/c.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>记忆模式</view>
-          <view>记忆背题，五年高考，三年模拟</view>
+          <view>🗝记忆模式</view>
+          <view>背诵题目，五年高考，三年模拟</view>
         </view>
       </navigator>
       <navigator class="box_1" url='/pages/saa_exam_superman/index'>
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>神仙模式</view>
+          <view>🐳神仙模式</view>
           <view>欲练此功，必先自宫</view>
         </view>
       </navigator>
       <navigator class="box_1" url='/pages/saa_exam_zen/index'>
         <image src="../../images/e.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>禅模式</view>
+          <view>🌱禅模式</view>
           <view>一念一清净，一叶一如来</view>
         </view>
       </navigator>

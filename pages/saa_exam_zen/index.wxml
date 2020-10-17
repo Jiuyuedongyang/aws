@@ -1,5 +1,5 @@
 <!--pages/exam_zen/index.wxml-->
-<view class="a">请联系群主领取禅模式pdf</view>
+<view class="a">请联系群主领取禅纸质材料</view>
 <view>
   <image  src="../../images/zen1.jpg" mode="widthFix"></image>
   <image  src="../../images/zen2.jpg" mode="widthFix"></image>

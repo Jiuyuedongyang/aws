@@ -7,59 +7,42 @@
 
 
 <view>
-  <!-- 请注意if_vip_saa除了0和1之外还有第三种非0非1的状态。这是，因为用户没有到cloud长安授权获取openid的时候，onshow已经去request一次，request的结果是一串5xx无效的的字符串，导致if_vip_saa非0也非1 注意-->
+  <!-- 请注意if_vip_sap除了0和1之外还有第三种非0非1的状态。这是，因为用户没有到cloud长安授权获取openid的时候，onshow已经去request一次，request的结果是一串5xx无效的的字符串，导致if_vip_sap非0也非1 注意-->
   <view wx:if="{{(if_vip_sap!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号aws_superman购买题库</view>
-  
+
   <view class="subject">
-    <view class="row">
-      <navigator class="row_1" url='/pages/sap_exam/index'>
-        <image src="../../images/a.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>学习模式</view>
-          <view>经典中英双语模式，在答题中学习</view>
-        </view>
-      </navigator>
-      <navigator class="row_1" url='/pages/sap_exam_remember/index'>
+    <view class="box">
+
+
+      <navigator class="box_1" url='/pages/sap_exam_quick/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>记忆模式</view>
-          <view>快速记忆背题，五年高考，三年模拟</view>
+          <view>✈️光速学习模式</view>
+          <view>死生看淡，不服来干</view>
         </view>
       </navigator>
-      <!-- <navigator class="row_1" url='/pages/sap_exam_collection/index'>
+
+
+
+
+      <navigator class="box_1" url='/pages/sap_exam_remember/index'>
         <image src="../../images/c.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>收藏</view>
-          <view>收藏库答题</view>
+          <view>🗝记忆模式</view>
+          <view>背诵题目，五年高考，三年模拟</view>
         </view>
-      </navigator> -->
-      <!-- <navigator class="row_1" url='/pages/sap_exam_simulated/index'>
+      </navigator>
+      <navigator class="box_1" url='/pages/sap_exam_superman/index'>
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>模拟考试</view>
-          <view>模拟练习答题</view>
-        </view>
-      </navigator> -->
-      <!-- <navigator class="row_1" url='/pages/sap_exam_quick/index'>
-        <image src="../../images/d.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>快速强记</view>
-          <view>快速强记答题</view>
-        </view>
-      </navigator> -->
-
-
-      <navigator class="row_1" url='/pages/sap_exam_superman/index'>
-        <image src="../../images/d.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>神仙模式</view>
+          <view>🐳神仙模式</view>
           <view>欲练此功，必先自宫</view>
         </view>
       </navigator>
-      <navigator class="row_1" url='/pages/sap_exam_zen/index'>
-        <image src="../../images/c.png" class="iamge"></image>
+      <navigator class="box_1" url='/pages/sap_exam_zen/index'>
+        <image src="../../images/e.png" class="iamge"></image>
         <view class="row_1_right">
-          <view>禅模式</view>
+          <view>🌱禅模式</view>
           <view>一念一清净，一叶一如来</view>
         </view>
       </navigator>
@@ -70,7 +53,6 @@
 
   </view>
 </view>
-
 
 
 

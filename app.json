@@ -25,6 +25,7 @@
 
 
     "pages/sap_exam/index",
+    "pages/sap_exam_quick/index",
     "pages/sap_exam_superman/index",
     "pages/sap_exam_remember/index",
     "pages/sap_exam_zen/index",

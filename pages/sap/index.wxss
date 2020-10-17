@@ -1,7 +1,8 @@
 page {
   width: 100%;
   background-color: rgb(235, 250, 236);
-  /* background-color: #99CCFF; */
+
+  
 }
 .a{
   /* width: 750rpx; */
@@ -51,7 +52,7 @@ page {
   flex-wrap: wrap;
 }
 
-.row {
+.box {
   display: flex;
   width: 100%;
   margin: 10rpx;
@@ -62,34 +63,54 @@ page {
 
 }
 
-.row_1 {
+.box_1 {
   display: flex;
   width: 100%;
   margin: 10rpx;
   padding: 20rpx;
   border-radius: 15rpx;
   background-color: #c4f2ce;
+  flex-wrap: wrap;
   /* border: black solid 3rpx; */
+}
+
+.navigator_up{
+  display: flex;
+}
+.navigator_down{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.navigator_down_1{
+  padding: 10rpx ;
+}
+.navigator_down_2{
+ 
+  padding: 10rpx ;
+}
+.navigator_down_3{
+
+  padding: 10rpx ;
+}
+.navigator_down_4{
+
+  padding: 10rpx ;
+  border-radius: 10rpx 10rpx;
+
 }
 .row_1_right{
   margin-left: 30rpx;
   display: flex;
   flex-direction:column;
   justify-content: center;
-  
-  
 }
+
 .iamge {
   width: 100rpx;
   height: 100rpx;
   border-radius: 10rpx;
 }
-
-
-
-
-
-
 
 
 
@@ -102,7 +123,7 @@ page {
   right: 0;
   bottom: 0;
   z-index: 10;
-  background: rgba(182, 182, 182, 0.3);
+  background: rgba(182, 182, 182, 0.3); 
   display: none;
 }
 
@@ -119,16 +140,15 @@ page {
 
   z-index: 12;
   border-radius: 40rpx;
-  /* 弹窗布局宽 */
-  width: 600rpx;
-  height: 800rpx;
+  width: 600rpx; 
+  height: 800rpx; 
 
   /* background: #ff9393; */
 }
 
 .dialog_image {
-  width: 600rpx;
-  height: 800rpx;
+  width: 600rpx; 
+  height: 800rpx; 
 }
 
 

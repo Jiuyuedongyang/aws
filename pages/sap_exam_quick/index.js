@@ -389,7 +389,7 @@ Page({
       success(res) {
         if (res.confirm) {
 
-          let cleraAll = wx.getStorageSync('saa')
+          let cleraAll = wx.getStorageSync('sap')
           console.log(cleraAll)
           that.setData({
             input_page: cleraAll.input_page, //用cl户跳转页面默认为1
@@ -464,20 +464,20 @@ Page({
     });
   },
 
-  setsaa() {
-    let saa_body = wx.getStorageSync(
-      'saa_body',
+  setsap() {
+    let sap_body = wx.getStorageSync(
+      'sap_body',
     )
-    let body_length = saa_body.length
-    // console.log(saa_body)
+    let body_length = sap_body.length
+    // console.log(sap_body)
     // success: (res) => {
-    //   console.log("saa_body_ok")
+    //   console.log("sap_body_ok")
     //   console.log(res.data)
 
     // }
 
     this.setData({
-      body: saa_body,
+      body: sap_body,
       body_length: body_length
     })
     //此时本页面中的所有信息
@@ -486,35 +486,35 @@ Page({
     console.log("ss" + this.data.body_length)
     console.log("此=======")
 
-    //设置saa
-    wx.setStorageSync('saa', this.data)
+    //设置sap
+    wx.setStorageSync('sap', this.data)
   },
   /**
    * 生命周期函数--监听页面加载
    */
 
 
-  getsaa_current() {
-    let saa_current = wx.getStorageSync('saa_current')
-    console.log("saa_current get")
-    console.log(saa_current)
+  getsap_current() {
+    let sap_current = wx.getStorageSync('sap_current')
+    console.log("sap_current get")
+    console.log(sap_current)
 
-    if (saa_current) {
+    if (sap_current) {
       this.setData({
 
 
 
 
-        input_page: saa_current.input_page, //用cl户跳转页面默认为1
-        outterIndex: saa_current.outterIndex, //题号索引 外索引
-        innerIndex: saa_current.innerIndex, //选项索引 内索引
-        flag: saa_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
-        currentTab: saa_current.currentTab, //当前swiper的页数
-        answerAll: saa_current.answerAll, //多选题数组
-        count_right: saa_current.count_right, //已答题正确数
-        count_sum: saa_current.count_sum, //已答总数
-        right_rate: saa_current.right_rate, //正确率
-        body: saa_current.body
+        input_page: sap_current.input_page, //用cl户跳转页面默认为1
+        outterIndex: sap_current.outterIndex, //题号索引 外索引
+        innerIndex: sap_current.innerIndex, //选项索引 内索引
+        flag: sap_current.flag, //答案标志位，用于 答错为0，答对为1，否则为任意数这里填100
+        currentTab: sap_current.currentTab, //当前swiper的页数
+        answerAll: sap_current.answerAll, //多选题数组
+        count_right: sap_current.count_right, //已答题正确数
+        count_sum: sap_current.count_sum, //已答总数
+        right_rate: sap_current.right_rate, //正确率
+        body: sap_current.body
 
 
       })
@@ -522,6 +522,7 @@ Page({
     }
     console.log(this.data)
   },
+  
   set_next() {
     if(this.data.currentTab + 2 > this.data.body_length){
       wx.showToast({
@@ -553,12 +554,11 @@ Page({
 
 
 
-
   onLoad: function () {
 
 
     this.adapt_screen()
-    this.setsaa()
+    this.setsap()
     // wx.showToast({
     //   title: '加载中...10s', //提示文字
     //   duration: 10000, //显示时长
@@ -582,7 +582,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getsaa_current()
+    this.getsap_current()
   },
 
   /**
@@ -598,7 +598,7 @@ Page({
    */
   onUnload: function () {
     console.log("onunload")
-    wx.setStorageSync('saa_current', this.data)
+    wx.setStorageSync('sap_current', this.data)
     console.log(this.data)
     console.log("onunload")
   },
