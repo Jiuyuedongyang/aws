@@ -36,7 +36,7 @@ Page({
     count_right: 0, //已答题正确数
     count_sum: 0, //已答总数
     right_rate: 0, //正确率
-    body_length:0,//总题目数
+    body_length: 0, //总题目数
 
 
     /** 
@@ -337,10 +337,10 @@ Page({
 
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
-    if ((input_page<0)||(input_page>=100)) {
+    if ((input_page < 0) || (input_page >= 100)) {
       wx.showToast({
-        title: '题号超出范围[1-99]',
-        icon:"none"
+        title: '题号超出PartⅠ范围[1-100]',
+        icon: "none"
       })
     } else {
       console.log(input_page);
@@ -462,22 +462,22 @@ Page({
     let saa_body = wx.getStorageSync(
       'saa_body',
     )
-    let body_length=saa_body.length
+    let body_length = saa_body.length
     // console.log(saa_body)
     // success: (res) => {
     //   console.log("saa_body_ok")
     //   console.log(res.data)
 
     // }
-    
+
     this.setData({
       body: saa_body,
-      body_length:body_length
+      body_length: body_length
     })
     //此时本页面中的所有信息
     console.log("此=======")
     console.log(this.data)
-    console.log("ss"+this.data.body_length)
+    console.log("ss" + this.data.body_length)
     console.log("此=======")
 
     //设置saa

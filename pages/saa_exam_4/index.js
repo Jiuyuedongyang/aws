@@ -36,7 +36,7 @@ Page({
     count_right: 0, //已答题正确数
     count_sum: 0, //已答总数
     right_rate: 0, //正确率
-    body_length:0,//总题目数
+    body_length: 0, //总题目数
 
 
     /** 
@@ -334,13 +334,18 @@ Page({
 
   //跳转页面函数
   goto() {
-
+    // console.log( this.data.input_page)
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
-    if ((input_page<0)||(input_page>=this.data.body_length)) {
+
+    //因为这里是索引从part2开始
+    //所以part2默认为100开始
+    //而input_page输入是比如是120,它就会读成20跳转到exam_1中，而20不在exam_2中，所以会跳到空白页，所以要手动-100
+    input_page = input_page - 300
+    if ((input_page < 0) || (input_page >= this.data.body_length-300)) {
       wx.showToast({
-        title: '题号超出范围',
-        icon:"none"
+        title: '题号超出PartⅣ范围[301-'+this.data.body_length+']',
+        icon: "none"
       })
     } else {
       console.log(input_page);
@@ -462,22 +467,22 @@ Page({
     let saa_body = wx.getStorageSync(
       'saa_body',
     )
-    let body_length=saa_body.length
+    let body_length = saa_body.length
     // console.log(saa_body)
     // success: (res) => {
     //   console.log("saa_body_ok")
     //   console.log(res.data)
 
     // }
-    
+
     this.setData({
       body: saa_body,
-      body_length:body_length
+      body_length: body_length
     })
     //此时本页面中的所有信息
     console.log("此=======")
     console.log(this.data)
-    console.log("ss"+this.data.body_length)
+    console.log("ss" + this.data.body_length)
     console.log("此=======")
 
     //设置saa
@@ -521,8 +526,9 @@ Page({
 
 
   onLoad: function () {
-
-
+    console.log("exam_4")
+console.log(this.data)
+console.log("exam_4")
     this.adapt_screen()
     this.setsaa()
     // wx.showToast({

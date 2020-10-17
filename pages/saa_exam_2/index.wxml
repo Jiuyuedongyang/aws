@@ -8,7 +8,8 @@
     <!-- 竖向模式请参考https://blog.csdn.net/u012054869/article/details/88018966 -->
     <!-- outterIndex是题目循环，innerIndex是答案选项循环   定义wx:for-item="outterItem" "innerItem"以区分内外层 -->
     <view class="we-wrapper" bindtouchmove="touchmove">
-      <swiper-item wx:for="{{body}}" wx:if="{{((outterIndex>=100)&&(outterIndex<=199))}}"   wx:for-index="outterIndex" wx:key="outter" wx:for-item="outterItem">
+      <swiper-item wx:for="{{body}}" wx:if="{{((outterIndex>=100)&&(outterIndex<=199))}}" wx:for-index="outterIndex"
+        wx:key="outter" wx:for-item="outterItem">
         <scroll-view scroll-y="{{true}}" style="height:{{clientHeight?clientHeight+'px':'auto'}}" enhanced="true"
           show-scrollbar="false" enable-back-to-top="true">
 
@@ -18,7 +19,7 @@
             <view class="questions">
               <view wx:if="{{outterItem.type==1}}">单选题/第{{outterIndex+1}}题/总{{body_length}}题</view>
               <view wx:if="{{outterItem.type==2}}">多选题/第{{outterIndex+1}}题/总{{body_length}}题</view>
-             
+
             </view>
 
 
