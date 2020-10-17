@@ -55,21 +55,49 @@ page {
   display: flex;
   width: 100%;
   margin: 10rpx;
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   justify-content: space-around;
   flex-wrap: wrap;
 
 
 }
 
-.row_1_left {
+.box_1 {
   display: flex;
   width: 100%;
   margin: 10rpx;
   padding: 20rpx;
   border-radius: 15rpx;
   background-color: #D9EFFA;
+  flex-wrap: wrap;
   /* border: black solid 3rpx; */
+}
+
+.navigator_up{
+  display: flex;
+}
+.navigator_down{
+  display: flex;
+  width: 100%;
+  background-color: tomato;
+  /* padding: 10rpx  0rpx; */
+  justify-content: space-between;
+}
+.navigator_down_1{
+  background-color: white;
+  padding: 10rpx ;
+}
+.navigator_down_2{
+  background-color: gold;
+  padding: 10rpx ;
+}
+.navigator_down_3{
+  background-color: green;
+  padding: 10rpx ;
+}
+.navigator_down_4{
+  background-color: wheat;
+  padding: 10rpx ;
 }
 .row_1_right{
   margin-left: 30rpx;
