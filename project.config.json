@@ -180,6 +180,12 @@
           "pathName": "pages/saa_exam_quick/index",
           "query": "",
           "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/cloud_cloud/index",
+          "pathName": "pages/cloud_cloud/index",
+          "scene": null
         }
       ]
     }

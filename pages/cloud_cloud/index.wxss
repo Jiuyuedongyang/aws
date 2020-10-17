@@ -1,1 +1,4 @@
-/* pages/cloud_cloud/index.wxss */
+image{
+  width: 760rpx;
+  height: 12000rpx;
+}

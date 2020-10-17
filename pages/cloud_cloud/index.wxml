@@ -1,2 +1,3 @@
-<!--pages/cloud_cloud/index.wxml-->
-<text>pages/cloud_cloud/index.wxml</text>
+<view>
+  <!-- <image src="../../images/cloud_cloud.jpg"></image> -->
+</view>
