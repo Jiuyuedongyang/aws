@@ -51,18 +51,18 @@ page {
   flex-wrap: wrap;
 }
 
-.row {
+.box {
   display: flex;
   width: 100%;
   margin: 10rpx;
-  /* background-color: blueviolet; */
+  background-color: blueviolet;
   justify-content: space-around;
   flex-wrap: wrap;
 
 
 }
 
-.row_1 {
+.row_1_left {
   display: flex;
   width: 100%;
   margin: 10rpx;

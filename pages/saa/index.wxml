@@ -11,29 +11,32 @@
   <view wx:if="{{(if_vip_saa!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号aws_superman购买题库</view>
 
   <view class="subject">
-    <view class="row">
-      <navigator class="row_1" url='/pages/saa_exam/index'>
-        <image src="../../images/a.png" class="iamge"></image>
-        <view class="row_1_right">
-          <view>学习模式</view>
-          <view>经典中英双语模式，在答题中学习</view>
-        </view>
-      </navigator>
-      <navigator class="row_1" url='/pages/saa_exam_remember/index'>
+    <view class="box">
+
+        <navigator class="row_1_left" url='/pages/saa_exam/index'>
+          <image src="../../images/a.png" class="iamge"></image>
+          <view class="row_1_right">
+            <view>学习模式</view>
+            <view>经典中英双语模式，在答题中学习</view>
+          </view>
+        </navigator>
+
+
+      <navigator class="row_1_left" url='/pages/saa_exam_remember/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">
           <view>记忆模式</view>
           <view>快速记忆背题，五年高考，三年模拟</view>
         </view>
       </navigator>
-      <navigator class="row_1" url='/pages/saa_exam_superman/index'>
+      <navigator class="row_1_left" url='/pages/saa_exam_superman/index'>
         <image src="../../images/d.png" class="iamge"></image>
         <view class="row_1_right">
           <view>神仙模式</view>
           <view>欲练此功，必先自宫</view>
         </view>
       </navigator>
-      <navigator class="row_1" url='/pages/saa_exam_zen/index'>
+      <navigator class="row_1_left" url='/pages/saa_exam_zen/index'>
         <image src="../../images/c.png" class="iamge"></image>
         <view class="row_1_right">
           <view>禅模式</view>
