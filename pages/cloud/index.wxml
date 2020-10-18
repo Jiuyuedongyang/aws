@@ -8,7 +8,7 @@
   </button>
   <view class="user_info_right">
     <text class="userName">hello,{{userInfo.nickName}}!</text>
-    <text>欢迎来到aws考试</text>
+    <text>欢迎开启aws架构师之旅，向世界上最优秀的云技术看齐</text>
   </view>
 </view>
 

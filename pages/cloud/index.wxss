@@ -19,6 +19,7 @@ page {
 
 .user_info_right {
   margin-left: 30rpx;
+  width: 400rpx;
   height: 150rpx;
   flex-direction: column;
   justify-content: center;

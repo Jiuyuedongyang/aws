@@ -33,7 +33,7 @@
 
     "pages/user_openid/index",
     "pages/cloud_cloud/index",
-    "pages/cloud_aws_group/index",
+    "pages/cloud_group/index",
     "pages/cloud_files/index",
     "pages/cloud_fight/index",
     "pages/cloud_about/index"
