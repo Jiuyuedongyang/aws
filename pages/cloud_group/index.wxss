@@ -1,12 +1,16 @@
 .a{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
 }
 .b{
   
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     
+}
+image{
+  width: 600rpx;
+  height: 800rpx;
 }
