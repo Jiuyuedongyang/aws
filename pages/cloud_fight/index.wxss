@@ -1,1 +1,4 @@
-/* pages/cloud_fight/index.wxss */
+image{
+  width: 760rpx;
+  height: 21000rpx;
+}
