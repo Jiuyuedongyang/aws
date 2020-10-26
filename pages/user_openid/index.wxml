@@ -2,5 +2,5 @@
 <button bindtap="getOpenId">获取密钥</button>
 <text selectable='true'> 密钥：{{openid}}</text>
 <view>长按密钥复制</view>
-<view>版本号：1.6.3</view>
+<view>版本号：1.6.4</view>
 <!-- <button bindtap="clearstoragesync">更新题库</button> -->
