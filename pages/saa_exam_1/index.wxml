@@ -33,7 +33,7 @@
             <!-- 确认答案 -->
             <!-- 确认答案的结果当flag==1或者0说明有答案，无论对错 0为错 1为对-->
             <view class="questions" wx:if="{{((flag==0)||(flag==1))}}">
-              <view>正确答案:{{body[outterIndex].answer}}</view>
+              <view>参考答案:{{body[outterIndex].answer}}</view>
               <view wx:if="{{flag==1}}">恭喜你答对了！继续保持！</view>
               <view wx:else>答错了，请总结经验再接再厉!</view>
             </view>
