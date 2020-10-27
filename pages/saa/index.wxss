@@ -75,6 +75,7 @@ page {
 
 .navigator_up{
   display: flex;
+  width: 100%;
 }
 .navigator_down{
   display: flex;

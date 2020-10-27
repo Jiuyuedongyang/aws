@@ -12,36 +12,37 @@
 
   <view class="subject">
     <view class="box">
-      <view class="box_1">
-
-        <navigator class="navigator_up" url='/pages/saa_exam/index'>
+      <navigator class="box_1" url='/pages/saa_exam/index'>
+        <view class="navigator_up">
           <image src="../../images/a.png" class="iamge"></image>
           <view class="row_1_right">
             <view>🏠学习模式</view>
             <view>经典中英双语模式，在答题中学习</view>
           </view>
-        </navigator>
+        </view>
 
 
-        <view class="navigator_down">
+        <!-- <view class="navigator_down">
           <navigator class="navigator_down_1" url='/pages/saa_exam_1/index'>
-            <!-- <image src="../../images/b.png" class="iamge"></image> -->
+            
               <view>💻Part Ⅰ</view>
           </navigator>
           <navigator class="navigator_down_2" url='/pages/saa_exam_2/index'>
-            <!-- <image src="../../images/b.png" class="iamge"></image> -->
+            
               <view>💻PartⅡ</view>
           </navigator>
           <navigator class="navigator_down_3" url='/pages/saa_exam_3/index'>
-            <!-- <image src="../../images/b.png" class="iamge"></image> -->
+            
               <view>💻Part Ⅲ</view>
           </navigator>
           <navigator class="navigator_down_4" url='/pages/saa_exam_4/index'>
-            <!-- <image src="../../images/b.png" class="iamge"></image> -->
+            
               <view>💻Part Ⅳ</view>
           </navigator>
-        </view>
-      </view>
+        </view> -->
+
+
+      </navigator>
 
       <navigator class="box_1" url='/pages/saa_exam_quick/index'>
         <image src="../../images/b.png" class="iamge"></image>
