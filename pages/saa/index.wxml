@@ -91,7 +91,7 @@
   <view class="dialog_mask" bindtap="toggleDialog" />
   <view class="dialog_container">
     <view>
-      <image class="dialog_image" src="../../images/ad_saa.jpg">
+      <image class="dialog_image" src="https://images.aws-superman.top/ad_saa.jpg">
       </image>
     </view>
   </view>
