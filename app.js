@@ -7,13 +7,13 @@ App({
   },
 
 
-  getData_saa() {
+  getData_ccp_saa_sap() {
     console.log("---")
     console.log("---")
     let that = this
 
     wx.request({
-      url: 'https://aws.aws-superman.top:5001/ccp-aws-superman-2020', //仅为示例，并非真实的接口地址
+      url: 'https://aws.aws-superman.top/ccp-aws-superman-2020', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -30,7 +30,7 @@ App({
 
 
     wx.request({
-      url: 'https://aws.aws-superman.top:5001/saa-aws-superman-2020', //仅为示例，并非真实的接口地址
+      url: 'https://aws.aws-superman.top/saa-aws-superman-2020', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -54,7 +54,7 @@ App({
 
 
     wx.request({
-      url: 'https://aws.aws-superman.top:5001/sap-aws-superman-2020', //仅为示例，并非真实的接口地址
+      url: 'https://aws.aws-superman.top/sap-aws-superman-2020', //仅为示例，并非真实的接口地址
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -75,7 +75,7 @@ App({
   onLaunch: function () {
 
 
-    this.getData_saa()
+    this.getData_ccp_saa_sap()
 
 
 

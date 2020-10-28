@@ -11,7 +11,7 @@ Page({
           console.log(res)
           console.log(res.code) //打印wx.login()返回的code码，通过code码发送给flask生成openid
           wx.request({
-            url: 'https://aws.aws-superman.top:5001/get_openid',
+            url: 'https://aws.aws-superman.top/get_openid',
             data: {
               code: res.code
             },
