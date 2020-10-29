@@ -54,6 +54,28 @@ Page({
 
     })
   },
+  onShow_if_on_off() {
+
+    let that = this
+    wx.request({
+      url: 'https://aws.aws-superman.top/if_on_off-aws-superman-2020',
+      data: {},
+      method: 'GET',
+      success(res) {
+        console.log(res)
+        console.log("if_on_off_saa " + res.data.if_on_off_saa)
+        console.log("if_on_off_sap " + res.data.if_on_off_sap)
+        that.setData({
+          if_on_off_saa: res.data.if_on_off_saa,
+          if_on_off_sap: res.data.if_on_off_sap
+        })
+      },
+      fail(res) {
+        console.log("if_on_off失败")
+      }
+
+    })
+  },
 
 
 
@@ -100,7 +122,7 @@ Page({
   onShow: function (options) {
     //在onShow()的时候查询用户是否购买了
     this.onShow_if_vip_saa()
-
+    this.onShow_if_on_off()
     // setTimeout(test222(), 3000) //延迟时间 这里是2秒
   }
 
