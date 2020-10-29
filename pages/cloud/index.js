@@ -22,7 +22,7 @@ Page({
         console.log(res)
         console.log(res.code) //打印wx.login()返回的code码，通过code码发送给flask生成openid
         wx.request({
-          url: 'https://aws.aws-superman.top:5001/get_openid',
+          url: 'https://aws.aws-superman.top/get_openid',
           data: {
             code: res.code
           },
@@ -123,8 +123,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: 'AWS云题库saa-c01☁️',
-      path: '/pages/saa/index'
+      title: 'AWS云题库saa-c02☁️',
+      path: '/pages/ccp/index'
     }
 
   },
@@ -132,7 +132,7 @@ Page({
   onShareTimeline: function () {
     return {
       title: 'AWS云题库',
-      path: 'pages/saa/index',
+      path: 'pages/ccp/index',
     }
   },
 

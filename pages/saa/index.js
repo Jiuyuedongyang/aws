@@ -65,8 +65,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: 'AWS云题库saa-c01☁️',
-      path: '/pages/saa/index'
+      title: 'AWS云题库saa-c02☁️',
+      path: '/pages/ccp/index'
     }
 
   },
@@ -74,7 +74,7 @@ Page({
   onShareTimeline: function () {
     return {
       title: 'AWS云题库',
-      path: 'pages/saa/index',
+      path: 'pages/ccp/index',
     }
   },
 
