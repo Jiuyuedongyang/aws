@@ -11,8 +11,8 @@ Page({
 
   if_vip() {
     wx.showToast({
-      title: '题库未购买',
-      icon: 'loading',
+      title: '请加微信aws_superman加入学习群',
+      icon: 'none',
       duration: 1500,
       mask: true
     })
@@ -88,7 +88,7 @@ Page({
     }
     return {
       title: 'AWS云题库saa-c02☁️',
-      path: '/pages/ccp/index'
+      path: '/pages/saa/index'
     }
 
   },
@@ -96,7 +96,7 @@ Page({
   onShareTimeline: function () {
     return {
       title: 'AWS云题库',
-      path: 'pages/ccp/index',
+      path: 'pages/saa/index',
     }
   },
 
@@ -117,9 +117,17 @@ Page({
 
 
 
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    wx.showToast({
+      title: '请加微信aws_superman加入学习群',
+      icon: 'none',
+      duration: 3000,
+      mask: false
+    })
+  },
 
   onShow: function (options) {
+    
     //在onShow()的时候查询用户是否购买了
     this.onShow_if_vip_saa()
     this.onShow_if_on_off()

@@ -68,7 +68,7 @@ Page({
     }
     return {
       title: 'AWS云题库ccp-c01☁️',
-      path: '/pages/saa/index'
+      path: '/pages/ccp/index'
     }
 
   },
@@ -84,13 +84,17 @@ Page({
 
 
 
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    wx.showToast({
+      title: '请加微信aws_superman加入学习群',
+      icon: 'none',
+      duration: 1500,
+      mask: true
+    })
+  },
 
   onShow: function (options) {
-    //在onShow()的时候查询用户是否购买了
-    this.onShow_if_vip_ccp()
-
-    // setTimeout(test222(), 3000) //延迟时间 这里是2秒
+   
   }
 
 

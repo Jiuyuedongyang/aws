@@ -11,9 +11,9 @@ Page({
 
   if_vip() {
     wx.showToast({
-      title: '题库未购买',
-      icon: 'loading',
-      duration: 1500,
+      title: '请加微信aws_superman加入学习群',
+      icon: 'none',
+      duration: 2000,
       mask: true
     })
     console.log("题库未购买")
@@ -102,7 +102,7 @@ Page({
     }
     return {
       title: 'AWS云题库sap-c01☁️',
-      path: '/pages/ccp/index'
+      path: '/pages/sap/index'
     }
 
   },
@@ -110,7 +110,7 @@ Page({
   onShareTimeline: function () {
     return {
       title: 'AWS云题库',
-      path: 'pages/ccp/index',
+      path: 'pages/sap/index',
     }
   }
 
