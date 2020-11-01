@@ -162,3 +162,7 @@ page {
 .pop_hidden {
   display: none;
 }
+.update{
+  font-size: small;
+  color: #cecece;
+}

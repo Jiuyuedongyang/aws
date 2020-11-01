@@ -67,7 +67,8 @@ Page({
         console.log("if_on_off_sap " + res.data.if_on_off_sap)
         that.setData({
           if_on_off_saa: res.data.if_on_off_saa,
-          if_on_off_sap: res.data.if_on_off_sap
+          if_on_off_sap: res.data.if_on_off_sap,
+          saa_update_time:res.data.saa_update_time,
         })
       },
       fail(res) {
