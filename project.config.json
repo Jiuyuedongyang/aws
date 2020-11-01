@@ -46,28 +46,16 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
     "plugin": {
-      "current": -1,
       "list": []
     },
     "game": {
-      "current": -1,
       "list": []
     },
     "gamePlugin": {
-      "current": -1,
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": [
         {
           "id": -1,
@@ -185,6 +173,12 @@
           "id": -1,
           "name": "pages/cloud_cloud/index",
           "pathName": "pages/cloud_cloud/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cloud_about/index",
+          "pathName": "pages/cloud_about/index",
           "scene": null
         }
       ]
