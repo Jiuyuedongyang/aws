@@ -78,6 +78,7 @@
           <view>一念一清净，一叶一如来</view>
         </view>
       </navigator>
+      <view>{{notification_saa}}</view>
       <view class="update">saa-c02题库已于{{saa_update_time}}更新，还未更新的朋友请及时更新。更新方法：任务栏删除小程序，重新搜索aws云题库进入即可完成更新。注：更新题目会清除之前所有收藏记录，答题分数等数据，望周知。 欢迎各位爱好者加入云爱好者群，一起讨论分析题目细节、答疑解惑，互帮互助，共同进步。</view>
 
     </view>

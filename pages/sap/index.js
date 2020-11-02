@@ -69,6 +69,7 @@ Page({
           if_on_off_saa: res.data.if_on_off_saa,
           if_on_off_sap: res.data.if_on_off_sap,
           sap_update_time:res.data.sap_update_time,
+          notification_sap:res.data.notification_sap
         })
       },
       fail(res) {
