@@ -36,6 +36,7 @@ Page({
     count_right: 0, //已答题正确数
     count_sum: 0, //已答总数
     right_rate: 0, //正确率
+    body_length: 0, //总题目数
 
 
     /** 
@@ -126,6 +127,12 @@ Page({
       flag: 100
     });
   },
+
+
+  //   onSlideNextStart (e) {
+  //     console.log("onSlideNextStart")
+  // console.log(e)
+  //   },
 
 
   //确认答题按钮函数
@@ -286,8 +293,8 @@ Page({
 
   //页面滑动时清除item.selectd选项，让用户在回来做这题的时候所有选项清零
   swiperchange(e) {
-    // console.log(this.data.currentTab)
-    // console.log("changeswiper微信自带");
+    console.log(this.data.currentTab)
+    console.log("changeswiper微信自带exam");
     // console.log(this.data.innerIndex);
     console.log(e)
     console.log(e.detail.current)
@@ -333,15 +340,24 @@ Page({
 
   //跳转页面函数
   goto() {
+
     //索引=输入-1 因为索引是从0开始，而用户输入是从1开始
     var input_page = this.data.input_page - 1;
+    if ((input_page < 0) || (input_page >= this.data.body_length)) {
+      wx.showToast({
+        title: '题号超出范围',
+        icon: "none"
+      })
+    } else {
+      console.log(input_page);
+      this.setData({
 
-    console.log(input_page);
-    this.setData({
+        flag: 100,
+        currentTab: input_page,
+      });
 
-      flag: 100,
-      currentTab: input_page,
-    });
+
+    }
   },
 
   //翻转 切换中英文en_cn标志位flag函数
@@ -363,6 +379,8 @@ Page({
     });
     // console.log("aa");
   },
+
+  //重置函数
   clearAll() {
     let that = this
     wx.showModal({
@@ -393,30 +411,6 @@ Page({
 
   },
 
-  // getData:function () {}的简写，向服务器获取题库源数据
-  // getData() {
-  //   console.log("---")
-  //   console.log(this.data.body)
-  //   console.log(this.data)
-  //   console.log("---")
-  //   let that = this
-  //   wx.request({
-  //     url: 'https://aws.lycaicai.top:5000', //仅为示例，并非真实的接口地址
-  //     header: {
-  //       'content-type': 'application/json' // 默认值
-  //     },
-  //     success(res) {
-  //       // console.log(res.data)
-  //       that.setData({
-  //         body: res.data
-  //       })
-
-  //     }
-  //   })
-  //   console.log("+++++")
-  //   console.log(this.data)
-  //   console.log("+++++")
-  // },
 
   handleCollection() {
     console.log(this.data.body[this.data.currentTab].isCollected)
@@ -474,19 +468,22 @@ Page({
     let sap_body = wx.getStorageSync(
       'sap_body',
     )
-
-    console.log(sap_body)
+    let body_length = sap_body.length
+    // console.log(sap_body)
     // success: (res) => {
     //   console.log("sap_body_ok")
     //   console.log(res.data)
 
     // }
+
     this.setData({
-      body: sap_body
+      body: sap_body,
+      body_length: body_length
     })
     //此时本页面中的所有信息
     console.log("此=======")
     console.log(this.data)
+    console.log("ss" + this.data.body_length)
     console.log("此=======")
 
     //设置sap
@@ -525,11 +522,41 @@ Page({
     }
     console.log(this.data)
   },
+  
+  set_next() {
+    if(this.data.currentTab + 2 > this.data.body_length){
+      wx.showToast({
+        title: '题号越界', //提示文字
+        duration: 1500, //显示时长
+        mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
+        icon: 'none', //图标，支持"success"、"loading"  
+      })
+    }else{
+    this.setData({
+      currentTab: this.data.currentTab + 1
+    })
+    }
+  },
+  set_previous() {
 
+    if(this.data.currentTab<=0){
+      wx.showToast({
+        title: '题号越界', //提示文字
+        duration: 1500, //显示时长
+        mask: true, //是否显示透明蒙层，防止触摸穿透，默认：false  
+        icon: 'none', //图标，支持"success"、"loading"  
+      })
+    }else{
+    this.setData({
+      currentTab: this.data.currentTab - 1
+    })}
+  },
 
 
 
   onLoad: function () {
+
+
     this.adapt_screen()
     this.setsap()
     wx.showToast({
