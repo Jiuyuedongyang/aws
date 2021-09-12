@@ -10,7 +10,7 @@
   <!-- 请注意if_vip_sap除了0和1之外还有第三种非0非1的状态。这是，因为用户没有到cloud长安授权获取openid的时候，onshow已经去request一次，request的结果是一串5xx无效的的字符串，导致if_vip_sap非0也非1 注意-->
 
   <view wx:if="{{     !((!if_vip_sap!=1) ||(!if_on_off_sap==0))    }}" class="if_vip" bindtap="if_vip">
-    请联系微信号aws_superman加入学习群</view>
+    为保证质量，请联系lin909958300@yeah.net开始答题</view>
 
 
 

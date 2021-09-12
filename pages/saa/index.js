@@ -11,7 +11,7 @@ Page({
 
   if_vip() {
     wx.showToast({
-      title: '请加微信aws_superman加入学习群',
+      title: '请发送邮件lin909958300@yeah.net解锁',
       icon: 'none',
       duration: 1500,
       mask: true
@@ -121,7 +121,7 @@ Page({
 
   onLoad: function (options) {
     wx.showToast({
-      title: '请加微信aws_superman加入学习群',
+      title: '请发送邮件lin909958300@yeah.net解锁答题',
       icon: 'none',
       duration: 3000,
       mask: false

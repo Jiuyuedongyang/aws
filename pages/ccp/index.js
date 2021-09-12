@@ -110,7 +110,7 @@ Page({
 
   onLoad: function (options) {
     wx.showToast({
-      title: '请加微信aws_superman加入学习群',
+      title: '欢迎进入云题库',
       icon: 'none',
       duration: 1500,
       mask: true

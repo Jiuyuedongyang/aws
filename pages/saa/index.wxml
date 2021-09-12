@@ -11,10 +11,12 @@
   <!-- <view wx:if="{{(if_vip_saa!=1)}}" class="if_vip" bindtap="if_vip">请联系微信号aws_superman加入学习群</view> -->
   <!-- 这里很他妈的烧脑，要仔细想想 -->
   <view wx:if="{{     !((!if_vip_saa!=1) ||(!if_on_off_saa==0))    }}" class="if_vip" bindtap="if_vip">
-    请联系微信号aws_superman加入学习群</view>
+    为保证质量，请联系lin909958300@yeah.net开始答题</view>
 
   <view class="subject">
     <view class="box">
+     
+     <!-- 
       <navigator class="box_1" url='/pages/saa_exam/index'>
         <view class="navigator_up">
           <image src="../../images/a.png" class="iamge"></image>
@@ -25,7 +27,7 @@
         </view>
 
 
-        <!-- <view class="navigator_down">
+        <view class="navigator_down">
           <navigator class="navigator_down_1" url='/pages/saa_exam_1/index'>
             
               <view>💻Part Ⅰ</view>
@@ -42,10 +44,12 @@
             
               <view>💻Part Ⅳ</view>
           </navigator>
-        </view> -->
+        </view> 
 
 
       </navigator>
+       -->
+      
       <navigator class="box_1" url='/pages/saa_exam_quick/index'>
         <image src="../../images/b.png" class="iamge"></image>
         <view class="row_1_right">

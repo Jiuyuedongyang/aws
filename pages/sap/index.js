@@ -11,7 +11,7 @@ Page({
 
   if_vip() {
     wx.showToast({
-      title: '请加微信aws_superman加入学习群',
+      title: '请发送邮件lin909958300@yeah.net解锁',
       icon: 'none',
       duration: 2000,
       mask: true
